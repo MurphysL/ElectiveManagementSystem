@@ -49,4 +49,15 @@ public class Sc {
     public void setTime(long time) {
         Time = time;
     }
+
+    @Override
+    public String toString() {
+        return "Sc{" +
+                "Cno=" + Cno +
+                ", Tno=" + Tno +
+                ", Sno=" + Sno +
+                ", Grade=" + Grade +
+                ", Time=" + Time +
+                '}';
+    }
 }

@@ -1,6 +1,9 @@
 package servlet;
 
+import bean.Sc;
+import bean.ScWrapper;
 import bean.Student;
+import dao.SCDao;
 import dao.StudentDao;
 
 import javax.servlet.ServletException;
@@ -20,15 +23,26 @@ public class LoginServlet extends HttpServlet {
         String type = request.getParameter("type");
         int no = Integer.parseInt(request.getParameter("no"));
         String password = request.getParameter("password");
-        System.out.println(no + " " + password + " " + type);
         switch (type){
             case "student":
-                System.out.println("13232");
                 Student student = StudentDao.login(no, password);
                 if(student != null){
                     System.out.println(student.toString());
                     request.getSession().setAttribute("student", student);
-                    response.sendRedirect("MainServlet?page=1");
+
+                    Sc sc = SCDao.queryThisTerm(student.getSno());
+                    ScWrapper wrapper = new ScWrapper();
+                    wrapper.setSc(sc);
+                    if(sc == null){
+                        wrapper.setNull(true);
+                        request.getSession().setAttribute("sc", wrapper);
+                        response.sendRedirect("StudentMainServlet?page=1");
+                    }else{
+                        wrapper.setNull(false);
+                        request.getSession().setAttribute("sc", wrapper);
+                        response.sendRedirect("SelfMainServlet?page=1");
+                    }
+
                 }else{
                     response.sendRedirect("../jsp/view/login_fail.jsp");
                 }

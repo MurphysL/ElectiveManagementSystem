@@ -1,4 +1,4 @@
-package bean;
+package bean.clz;
 
 /**
  * 课程实体类

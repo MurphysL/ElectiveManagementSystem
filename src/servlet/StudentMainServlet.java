@@ -1,10 +1,9 @@
 package servlet;
 
-import bean.Course;
-import bean.Courses;
 import bean.Student;
+import bean.clz.DetailClasses;
 import config.Config;
-import dao.CourseDao;
+import dao.DetailClassDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,21 +11,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * 学生主界面
  */
-@WebServlet(name = "StudentMainServlet", value = "/servlet/MainServlet")
+@WebServlet(name = "StudentMainServlet", value = "/servlet/StudentMainServlet")
 public class StudentMainServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int page = Integer.parseInt(request.getParameter("page"));
         Student student = (Student) request.getSession().getAttribute("student");
         int sno = student.getSno();
-        System.out.println(student.toString());
 
-        Courses courses = CourseDao.queryPagingCourses(sno, page);
-        int num = courses.getNum();
+        DetailClasses classes = DetailClassDao.queryPagingDetailClasses(sno, page);
+        int num = classes.getNum();
 
         int pages;//总页数
         StringBuilder sb = new StringBuilder();
@@ -76,8 +73,12 @@ public class StudentMainServlet extends HttpServlet {
             }
         }
         request.getSession().setAttribute("bar", sb.toString());
-        request.getSession().setAttribute("courses", courses);
-        response.sendRedirect("/jsp/view/main.jsp");
+
+        for(int i = 0 ;i < classes.getList().size(); i ++){
+            System.out.println(classes.getList().get(i).toString());
+        }
+        request.getSession().setAttribute("classes", classes);
+        response.sendRedirect("/jsp/view/student_main.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

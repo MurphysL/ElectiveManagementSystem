@@ -14,7 +14,7 @@
 <body>
 <h1>失败,即将退回主界面!!</h1>
 <%
-    response.setHeader("refresh","2;URL=main.jsp?page=1");
+    response.setHeader("refresh","2;URL=student_main.jsp?page=1");
 %>
 </body>
 </html>

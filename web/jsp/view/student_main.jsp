@@ -1,14 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: lenovo
-  Date: 2017/4/11
-  Time: 20:20
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page import="java.util.Random" %>
-<%@ page import="bean.Course" %>
+
+<%@ page import="bean.clz.DetailClass" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="courses" class="bean.Courses" scope="session"/>
+<jsp:useBean id="classes" class="bean.clz.DetailClasses" scope="session"/>
+<jsp:useBean id="sc" class="bean.ScWrapper" scope="session"/>
 <html>
 <head>
     <meta charset="utf-8">
@@ -24,7 +18,25 @@
     <!-- Header -->
     <header>
         <%@include file="../widght/nav_login.jsp" %>
-        <%@include file="../widght/banner.jsp"%>
+        <div id ="yq_banner">
+            <div>
+                <h1 id="yq_time1">00 : 00 : 00</h1>
+                <h1 id="yq_time2">2017年1月1日星期一</h1>
+                <hr>
+                <%
+                    if(sc.isNull()){
+                %>
+                        <p>本学期未选课</p>
+                <%
+                    }else{
+                %>
+                        <p>本学期已选课</p>
+                <%
+                    }
+                %>
+
+            </div>
+        </div>
     </header>
     <!-- Content -->
     <div id="yq_content">
@@ -35,14 +47,15 @@
                     String img_id = "f_img" + i;
                     String a_id = "f_title" + i;
                     String p_id = "f_des" + i;
-                    if(i-1 < courses.getCourses().size()){
-                        Course course = courses.getCourses().get(i-1);
-                        String cname = course.getCname();
+                    if(i-1 < classes.getList().size()){
+                        DetailClass clz = classes.getList().get(i-1);
+                        String cname = clz.getCname();
+                        String teacher = clz.getTname();
             %>
                         <div id=<%=div_id%>>
                             <img src="../../img/pic1.jpg" id=<%=img_id%>>
-                            <a id=<%=a_id%> class="title" href="../../servlet/BlogServlet?blog_id=<%=course.getCno()%>"><%=cname%></a>
-                            <%--<p id=<%=p_id%> class="des"><%=main%></p>--%>
+                            <a id=<%=a_id%> class="title" href="../../servlet/ClassDetailServlet?cno=<%=clz.getCno()%>&tno=<%=clz.getTno()%>"><%=cname%></a>
+                            <p id=<%=p_id%> class="des"><%=teacher%></p>
                         </div>
             <%
                     }else{

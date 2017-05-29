@@ -7,6 +7,9 @@ import java.util.List;
  */
 public class Courses {
 
+    /**
+     * 总课程数
+     */
     private int num;
     private List<Course> courses;
 

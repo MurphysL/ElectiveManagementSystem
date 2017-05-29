@@ -18,7 +18,14 @@
     <%-- 首页 --%>
     <header>
         <%@include file="jsp/widght/nav_unlogin.jsp" %>
-        <%@include file="jsp/widght/banner.jsp" %>
+        <div id ="yq_banner">
+            <div>
+                <h1 id="yq_time1">00 : 00 : 00</h1>
+                <h1 id="yq_time2">2017年1月1日星期一</h1>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
     </header>
 </div>
 
