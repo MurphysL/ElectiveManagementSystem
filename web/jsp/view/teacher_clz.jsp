@@ -1,16 +1,14 @@
-
-<%--
-成绩耦合
-待修改 clz_view!!!!
---%>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="util.TimeUtil" %>
-<%@ page import="dao.SCDao" %>
+<%@ page import="bean.DetailSc" %>
+<%@ page import="java.util.List" %>
+<%--
+  view 耦合性 待修改
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<jsp:useBean id="scs" class="bean.DetailScs" scope="session"/>
 <jsp:useBean id="clz" class="bean.clz.DetailClass" scope="session"/>
-<jsp:useBean id="student" class="bean.Student" scope="session"/>
-<!DOCTYPE HTML>
 <html>
 <head>
     <title><%=clz.getCname()%>(<%=clz.getTname()%>)</title>
@@ -27,27 +25,12 @@
         <div id="logo">
             <a href="../../servlet/MainServlet?page=1" >NUC选修管理系统</a>
         </div>
-        <%
-            long[] terms = TimeUtil.getTermTimeStamp();
-            if(clz.getTime() > terms[0] && clz.getTime() < terms[1]){
-        %>
-            <ul>
-                <li><a href="../../servlet/SelectClassServlet?cno=<%=clz.getCno()%>&tno=<%=clz.getTno()%>&sno=<%=student.getSno()%>">选课</a></li>
-                <%--<li><a href="../../servlet/DeleteClassServlet?cno=<%=clz.getCno()%>&tno=<%=clz.getTno()%>&sno=<%=student.getSno()%>">退课</a></li>--%>
-            </ul>
-        <%
-            }
-        %>
-
     </nav>
 </div>
 
 <!-- Main -->
 <section id="main">
     <div class="inner">
-        <div class="image fit">
-            <img src="../../img/pic1.jpg" />
-        </div>
         <header>
             <h1><%=clz.getCname()%> ( no.<%=clz.getCno()%> )</h1>
             <p class="info">教师：<%=clz.getTname()%> ( no.<%=clz.getTno()%> )</p>
@@ -60,18 +43,39 @@
             <p class="info">开课地址：<%=clz.getAddress()%></p>
             <p class="info">学分：<%=clz.getCcredit()%></p>
             <%
+                long[] terms = TimeUtil.getTermTimeStamp();
                 if(clz.getTime() > terms[0] && clz.getTime() < terms[1]){
             %>
-                    <p class="info">状态：进行中</p>
+            <p class="info">状态：进行中</p>
             <%
                 }else{
-                    int grade = SCDao.queryGrade(clz.getCno(), clz.getTno(), student.getSno());
             %>
-                    <p class="info"><%=grade%></p>
-                    <p class="info">状态：已结束</p>
+            <p class="info">状态：已结束</p>
             <%
                 }
             %>
+
+            <table  align="center" border="2" width="1000px" height="50px">
+                <tr>
+                    <td align="center">姓 名(学 号)</td>
+                    <td align="center">性  别</td>
+                    <td align="center">院  系</td>
+                    <td align="center">成  绩</td>
+                </tr>
+                <%
+                    List<DetailSc> sc = scs.getList();
+                    for(int i = 0 ;i < sc.size() ;i ++){
+                %>
+                <tr>
+                    <td align="center"><%=sc.get(i).getSname()%>(<%=sc.get(i).getSno()%>)</td>
+                    <td align="center"><%=sc.get(i).getSsex()%></td>
+                    <td align="center"><%=sc.get(i).getSdept()%></td>
+                    <td align="center"><%=sc.get(i).getGrade()%></td>
+                </tr>
+                <%
+                    }
+                %>
+            </table>
 
         </header>
     </div>
@@ -79,6 +83,4 @@
 
 <!-- Footer -->
 <%@include file="../widght/footer.jsp"%>
-
-</body>
 </html>

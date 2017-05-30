@@ -23,83 +23,86 @@
     <view id="17" parent="2" name="clz_view">
       <Comment>VIEW</Comment>
     </view>
-    <column id="18" parent="12" name="Cno">
+    <view id="18" parent="2" name="sc_view">
+      <Comment>VIEW</Comment>
+    </view>
+    <column id="19" parent="12" name="Cno">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="19" parent="12" name="Tno">
+    <column id="20" parent="12" name="Tno">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="20" parent="12" name="Address">
+    <column id="21" parent="12" name="Address">
       <Position>3</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="21" parent="12" name="Time">
+    <column id="22" parent="12" name="Time">
       <Position>4</Position>
       <DataType>mediumtext|0</DataType>
     </column>
-    <key id="22" parent="12" name="PRIMARY">
+    <key id="23" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Cno
 Tno</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="23" parent="13" name="Cno">
+    <column id="24" parent="13" name="Cno">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="24" parent="13" name="Cname">
+    <column id="25" parent="13" name="Cname">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="25" parent="13" name="Ccredit">
+    <column id="26" parent="13" name="Ccredit">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <key id="26" parent="13" name="PRIMARY">
+    <key id="27" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Cno</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="27" parent="14" name="Cno">
+    <column id="28" parent="14" name="Cno">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="28" parent="14" name="Tno">
+    <column id="29" parent="14" name="Tno">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="29" parent="14" name="Sno">
+    <column id="30" parent="14" name="Sno">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="30" parent="14" name="Grade">
+    <column id="31" parent="14" name="Grade">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="31" parent="14" name="Time">
+    <column id="32" parent="14" name="Time">
       <Position>5</Position>
       <DataType>mediumtext|0</DataType>
     </column>
-    <index id="32" parent="14" name="Sno">
+    <index id="33" parent="14" name="Sno">
       <ColNames>Sno</ColNames>
     </index>
-    <key id="33" parent="14" name="PRIMARY">
+    <key id="34" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Cno
 Tno
 Sno</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="34" parent="14" name="sc_ibfk_1">
+    <foreign-key id="35" parent="14" name="sc_ibfk_1">
       <ColNames>Cno
 Tno</ColNames>
       <RefSchemaName>elective</RefSchemaName>
@@ -107,98 +110,137 @@ Tno</ColNames>
       <RefColNames>Cno
 Tno</RefColNames>
     </foreign-key>
-    <foreign-key id="35" parent="14" name="sc_ibfk_2">
+    <foreign-key id="36" parent="14" name="sc_ibfk_2">
       <ColNames>Sno</ColNames>
       <RefSchemaName>elective</RefSchemaName>
       <RefTableName>student</RefTableName>
       <RefColNames>Sno</RefColNames>
     </foreign-key>
-    <column id="36" parent="15" name="Sno">
+    <column id="37" parent="15" name="Sno">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="37" parent="15" name="Sname">
+    <column id="38" parent="15" name="Sname">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="38" parent="15" name="Ssex">
+    <column id="39" parent="15" name="Ssex">
       <Position>3</Position>
       <DataType>varchar(2)|0</DataType>
     </column>
-    <column id="39" parent="15" name="Sdept">
+    <column id="40" parent="15" name="Sdept">
       <Position>4</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="40" parent="15" name="password">
+    <column id="41" parent="15" name="password">
       <Position>5</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="41" parent="15" name="avatar">
+    <column id="42" parent="15" name="avatar">
       <Position>6</Position>
       <DataType>varchar(100)|0</DataType>
     </column>
-    <key id="42" parent="15" name="PRIMARY">
+    <key id="43" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Sno</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="43" parent="16" name="Tno">
+    <column id="44" parent="16" name="Tno">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="44" parent="16" name="Tname">
+    <column id="45" parent="16" name="Tname">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="45" parent="16" name="Tsex">
+    <column id="46" parent="16" name="Tsex">
       <Position>3</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="46" parent="16" name="password">
+    <column id="47" parent="16" name="password">
       <Position>4</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <key id="47" parent="16" name="PRIMARY">
+    <key id="48" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Tno</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="48" parent="17" name="Cno">
+    <column id="49" parent="17" name="Cno">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="49" parent="17" name="Cname">
+    <column id="50" parent="17" name="Cname">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="50" parent="17" name="Ccredit">
+    <column id="51" parent="17" name="Ccredit">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="51" parent="17" name="Tno">
+    <column id="52" parent="17" name="Tno">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="52" parent="17" name="Tname">
+    <column id="53" parent="17" name="Tname">
       <Position>5</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="53" parent="17" name="Tsex">
+    <column id="54" parent="17" name="Tsex">
       <Position>6</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="54" parent="17" name="Address">
+    <column id="55" parent="17" name="Address">
       <Position>7</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="55" parent="17" name="Time">
+    <column id="56" parent="17" name="Time">
       <Position>8</Position>
       <DataType>mediumtext|0</DataType>
+    </column>
+    <column id="57" parent="18" name="Cno">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="18" name="Tno">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="18" name="Time">
+      <Position>3</Position>
+      <DataType>mediumtext|0</DataType>
+    </column>
+    <column id="60" parent="18" name="Sno">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="18" name="Sname">
+      <Position>5</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="62" parent="18" name="Ssex">
+      <Position>6</Position>
+      <DataType>varchar(2)|0</DataType>
+    </column>
+    <column id="63" parent="18" name="Sdept">
+      <Position>7</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="64" parent="18" name="avatar">
+      <Position>8</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="65" parent="18" name="Grade">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
     </column>
   </database-model>
 </dataSource>

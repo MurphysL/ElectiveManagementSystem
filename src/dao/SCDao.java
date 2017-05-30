@@ -1,12 +1,14 @@
 package dao;
 
-import bean.Sc;
+import bean.*;
 import db.ConnUtil;
 import util.TimeUtil;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 选课信息类
@@ -120,5 +122,48 @@ public class SCDao {
             }
         }
         return num;
+    }
+
+    /**
+     * 获取选课情况
+     * @param cno 课程号
+     * @param tno 教师号
+     * @param time 开课时间
+     * @return Sc包装类
+     */
+    public static DetailScs quertSelectScs(int cno , int tno, long time){
+        DetailScs scs = new DetailScs();
+        List<DetailSc> list = new ArrayList<>();
+        String sql = "SELECT * FROM sc_view WHERE Cno= ? AND Tno=? AND time BETWEEN ? AND ?";
+        try {
+            PreparedStatement ps = ConnUtil.getInstance().prepareStatement(sql);
+            ps.setInt(1, cno);
+            ps.setInt(2, tno);
+            long[] terms = TimeUtil.getTermTimeStamp(time);
+            System.out.println(terms[0] +" "+terms[1] );
+            ps.setLong(3, terms[0]);
+            ps.setLong(4, terms[1]);
+
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                DetailSc sc = new DetailSc();
+                sc.setCno(rs.getInt(1));
+                sc.setTno(rs.getInt(2));
+                sc.setTime(rs.getLong(3));
+                sc.setSno(rs.getInt(4));
+                sc.setSname(rs.getString(5));
+                sc.setSsex(rs.getString(6));
+                sc.setSdept(rs.getString(7));
+                sc.setAvatar(rs.getString(8));
+                sc.setGrade(rs.getInt(9));
+                list.add(sc);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        scs.setList(list);
+
+        return scs;
     }
 }

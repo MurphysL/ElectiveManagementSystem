@@ -12,8 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by lenovo on 2017/5/29.
+ * 学生退课 Servlet
  */
+@Deprecated
 @WebServlet(name = "DeleteClassServlet", value = "/servlet/DeleteClassServlet")
 public class DeleteClassServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,7 +23,9 @@ public class DeleteClassServlet extends HttpServlet {
         int tno = Integer.parseInt(request.getParameter("tno"));
         int sno = Integer.parseInt(request.getParameter("sno"));
 
+        System.out.println(cno + " " + tno+" " + sno +"=======");
         int result = SCDao.deleteClass(sno);
+        System.out.println(result + "=======");
         if(result > 0){
             Sc sc = SCDao.queryThisTerm(sno);
             ScWrapper wrapper = new ScWrapper();

@@ -3,8 +3,10 @@ package servlet;
 import bean.Sc;
 import bean.ScWrapper;
 import bean.Student;
+import bean.Teacher;
 import dao.SCDao;
 import dao.StudentDao;
+import dao.TeacherDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -49,6 +51,14 @@ public class LoginServlet extends HttpServlet {
 
                 break;
             case "teacher":
+                Teacher teacher = TeacherDao.login(no, password);
+                if(teacher != null){
+                    request.getSession().setAttribute("teacher", teacher);
+                    response.sendRedirect("TeacherSelfServlet?page=1");
+
+                }else{
+                    response.sendRedirect("../jsp/view/login_fail.jsp");
+                }
                 break;
             case "admin":
                 break;

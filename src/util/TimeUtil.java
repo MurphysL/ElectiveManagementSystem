@@ -3,6 +3,7 @@ package util;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * 时间戳相关
@@ -24,8 +25,8 @@ public class TimeUtil {
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH) + 1;
 
-        String term_begin = "";
-        String term_end = "";
+        String term_begin;
+        String term_end;
 
         if(month >= 1 && month <= 6){
             term_begin = year + TERM_BEGIN_END_1;
@@ -45,4 +46,40 @@ public class TimeUtil {
 
         return t;
     }
+
+    /**
+     * 获取指定时间学期开始与截止时间
+     * @param time 指定时间
+     * @return t[0]-开始时间  t[1]-截止时间
+     */
+    public static long[] getTermTimeStamp(long time){
+        long[] t = new long[2];
+        Date date = new Date(time*1000);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH) + 1;
+
+        String begin;
+        String end;
+
+        if(month <= 6 && month >= 1){
+            end = year + TERM_END_END_1;
+            begin = year + TERM_BEGIN_END_1;
+        }else{
+            begin = year + TERM_BEGIN_END_2;
+            end = year + TERM_END_END_2;
+        }
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        try {
+            t[0] = format.parse(begin).getTime()/1000;
+            t[1] = format.parse(end).getTime()/1000;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return t;
+    }
+
 }
