@@ -1,6 +1,7 @@
 package dao;
 
 import bean.Teacher;
+import bean.TeacherWrapper;
 import bean.clz.DetailClass;
 import bean.clz.DetailClasses;
 import config.Config;
@@ -90,5 +91,93 @@ public class TeacherDao {
         classes.setNum(num);
         classes.setList(list);
         return classes;
+    }
+
+    /**
+     * 插入教师信息
+     * @param tno 教师号
+     * @param tname 教师名
+     * @param tsex 教师性别
+     * @return 是否成功
+     */
+    public static boolean insert(int tno, String tname, String tsex){
+        String sql = "INSERT INTO teacher(Tno, Tname, Tsex) VALUES(?, ?, ?)";
+        try {
+            PreparedStatement ps = ConnUtil.getInstance().prepareStatement(sql);
+            ps.setInt(1, tno);
+            ps.setString(2, tname);
+            ps.setString(3, tsex);
+
+            if(ps.executeUpdate() > 0){
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    /**
+     * 查询所有教师信息（分页）
+     * @param page 页数
+     * @return 教师包装类
+     */
+    public static TeacherWrapper queryPagingTeachers(int page){
+        TeacherWrapper teachers = new TeacherWrapper();
+        List<Teacher> list = new ArrayList<>();
+        String sql = "SELECT * FROM teacher LIMIT ?, ?";
+        String sql2 = "SELECT count(*) FROM teacher";
+        int start = (page-1)* Config.PAGE_BLOG_NUM;
+        int num = Config.PAGE_BLOG_NUM;
+
+        try {
+            PreparedStatement ps = ConnUtil.getInstance().prepareStatement(sql);
+            ps.setInt(1, start);
+            ps.setInt(2, num);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                Teacher teacher = new Teacher();
+                teacher.setTno(rs.getInt(1));
+                teacher.setTname(rs.getString(2));
+                teacher.setTsex(rs.getString(3));
+                teacher.setPassword(rs.getString(4));
+                list.add(teacher);
+            }
+
+            PreparedStatement ps2 = ConnUtil.getInstance().prepareStatement(sql2);
+            num = ps2.executeQuery().getInt(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        teachers.setList(list);
+        teachers.setNum(num);
+        return teachers;
+    }
+
+    /**
+     * 更新教师信息
+     * @param tno 教工号
+     * @param tname 姓名
+     * @param tsex 性别
+     * @param password 密码
+     * @return 是否成功
+     */
+    public static boolean updateTeacher(int tno, String tname, String tsex, String password){
+        String sql = "UPDATE teacher SET Tname=?, Tsex=?, password=? WHERE Tno=?";
+        try {
+            PreparedStatement ps = ConnUtil.getInstance().prepareStatement(sql);
+            ps.setString(1, tname);
+            ps.setString(2, tsex);
+            ps.setString(3, password);
+            ps.setInt(4, tno);
+            if(ps.executeUpdate() > 0){
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

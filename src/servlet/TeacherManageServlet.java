@@ -1,9 +1,8 @@
 package servlet;
 
-import bean.Student;
-import bean.clz.DetailClasses;
+import bean.TeacherWrapper;
 import config.Config;
-import dao.DetailClassDao;
+import dao.TeacherDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,17 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 学生主界面
+ * Created by lenovo on 2017/6/1.
  */
-@WebServlet(name = "StudentMainServlet", value = "/servlet/StudentMainServlet")
-public class StudentMainServlet extends HttpServlet {
+@WebServlet(name = "TeacherManageServlet", value = "/servlet/TeacherManageServlet")
+public class TeacherManageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         int page = Integer.parseInt(request.getParameter("page"));
-        Student student = (Student) request.getSession().getAttribute("student");
-        int sno = student.getSno();
-
-        DetailClasses classes = DetailClassDao.queryPagingDetailClasses(sno, page);
-        int num = classes.getNum();
+        TeacherWrapper teahcers = TeacherDao.queryPagingTeachers(page);
+        int num = teahcers.getNum();
 
         int pages;//总页数
         StringBuilder sb = new StringBuilder();
@@ -55,7 +52,7 @@ public class StudentMainServlet extends HttpServlet {
                 "\tborder-radius: 25px;";
         for(int i = 1 ;i <= pages ;i ++){
             if(i == page){
-                sb.append("<a href=../../servlet/StudentMainServlet?page=")
+                sb.append("<a href=../../servlet/TeacherManageServlet?page=")
                         .append(i)
                         .append(" id=\"select\" style=\"")
                         .append(select_css)
@@ -63,7 +60,7 @@ public class StudentMainServlet extends HttpServlet {
                         .append(i)
                         .append("</a>");
             }else{
-                sb.append("<a href=../../servlet/StudentMainServlet?page=")
+                sb.append("<a href=../../servlet/TeacherManageServlet?page=")
                         .append(i)
                         .append(" id=\"select\" style=\"")
                         .append(unselect_css)
@@ -73,8 +70,8 @@ public class StudentMainServlet extends HttpServlet {
             }
         }
         request.getSession().setAttribute("bar", sb.toString());
-        request.getSession().setAttribute("classes", classes);
-        response.sendRedirect("/jsp/view/student_main.jsp");
+        request.getSession().setAttribute("teachers", teahcers);
+        response.sendRedirect("../jsp/view/teachers_manage.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

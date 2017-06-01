@@ -1,9 +1,7 @@
 package servlet;
 
-import bean.Sc;
-import bean.ScWrapper;
-import bean.Student;
-import bean.Teacher;
+import bean.*;
+import dao.AdminDao;
 import dao.SCDao;
 import dao.StudentDao;
 import dao.TeacherDao;
@@ -16,7 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 登录 Servlet
+ * 登录 :
+ * 学生、教师、管理员分流
  */
 @WebServlet(name = "LoginServlet", value = "/servlet/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -25,11 +24,11 @@ public class LoginServlet extends HttpServlet {
         String type = request.getParameter("type");
         int no = Integer.parseInt(request.getParameter("no"));
         String password = request.getParameter("password");
+
         switch (type){
             case "student":
                 Student student = StudentDao.login(no, password);
                 if(student != null){
-                    System.out.println(student.toString());
                     request.getSession().setAttribute("student", student);
 
                     Sc sc = SCDao.queryThisTerm(student.getSno());
@@ -44,27 +43,27 @@ public class LoginServlet extends HttpServlet {
                         request.getSession().setAttribute("sc", wrapper);
                         response.sendRedirect("SelfMainServlet?page=1");
                     }
-
-                }else{
-                    response.sendRedirect("../jsp/view/login_fail.jsp");
                 }
-
                 break;
             case "teacher":
-                Teacher teacher = TeacherDao.login(no, password);
+                Teacher teacher = TeacherDao.login(no, password); // 教师个人信息
                 if(teacher != null){
                     request.getSession().setAttribute("teacher", teacher);
                     response.sendRedirect("TeacherSelfServlet?page=1");
-
-                }else{
-                    response.sendRedirect("../jsp/view/login_fail.jsp");
                 }
                 break;
             case "admin":
+                Admin admin = AdminDao.login(no, password);
+                if(admin != null){
+                    request.getSession().setAttribute("admin", admin);
+                    request.getRequestDispatcher("../jsp/view/admin_main.jsp").forward(request, response);
+                }
                 break;
             default:
                 break;
         }
+        // 登录失败
+        response.sendRedirect("../jsp/view/login_fail.jsp");
 
     }
 

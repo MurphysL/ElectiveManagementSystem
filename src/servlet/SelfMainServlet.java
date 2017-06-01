@@ -75,7 +75,6 @@ public class SelfMainServlet extends HttpServlet {
         request.getSession().setAttribute("bar", sb.toString());
         request.getSession().setAttribute("self_classes", classes);
         response.sendRedirect("/jsp/view/self_main.jsp");
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
