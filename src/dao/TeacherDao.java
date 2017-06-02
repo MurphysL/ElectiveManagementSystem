@@ -125,6 +125,7 @@ public class TeacherDao {
      */
     public static TeacherWrapper queryPagingTeachers(int page){
         TeacherWrapper teachers = new TeacherWrapper();
+        int sum = 0;
         List<Teacher> list = new ArrayList<>();
         String sql = "SELECT * FROM teacher LIMIT ?, ?";
         String sql2 = "SELECT count(*) FROM teacher";
@@ -146,13 +147,13 @@ public class TeacherDao {
             }
 
             PreparedStatement ps2 = ConnUtil.getInstance().prepareStatement(sql2);
-            num = ps2.executeQuery().getInt(1);
+            sum = ps2.executeQuery().getInt(1);
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         teachers.setList(list);
-        teachers.setNum(num);
+        teachers.setNum(sum);
         return teachers;
     }
 
@@ -172,6 +173,25 @@ public class TeacherDao {
             ps.setString(2, tsex);
             ps.setString(3, password);
             ps.setInt(4, tno);
+            if(ps.executeUpdate() > 0){
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
+     * 删除教师
+     * @param tno 教师号
+     * @return 是否删除成功
+     */
+    public static boolean deleteTeacher(int tno){
+        String sql = "DELETE FROM teacher WHERE Tno = ?";
+        try {
+            PreparedStatement ps = ConnUtil.getInstance().prepareStatement(sql);
+            ps.setInt(1, tno);
             if(ps.executeUpdate() > 0){
                 return true;
             }

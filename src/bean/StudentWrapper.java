@@ -8,6 +8,16 @@ import java.util.List;
 public class StudentWrapper {
     private List<Student> list;
 
+    private int num;
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
     public List<Student> getList() {
         return list;
     }

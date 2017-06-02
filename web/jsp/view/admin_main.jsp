@@ -36,7 +36,7 @@
             </div>
             <div id="yq_frg2">
                 <img src="../../img/pic1.jpg" id="f_img2">
-                <a id="f_title2" class="title" href="../../servlet/ClassDetailServlet">学生管理</a>
+                <a id="f_title2" class="title" href="../../servlet/StudentManageServlet?page=1">学生管理</a>
             </div>
             <div id="yq_frg3">
                 <img src="../../img/pic1.jpg" id="f_img3">

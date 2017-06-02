@@ -1,7 +1,13 @@
-<%@ page import="bean.Teacher" %>
-<%@ page import="java.util.List" %>
+<%@ page import="bean.Student" %>
+<%@ page import="java.util.List" %><%--
+  Created by IntelliJ IDEA.
+  User: lenovo
+  Date: 2017/6/2
+  Time: 14:11
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="teachers" class="bean.TeacherWrapper" scope="session"/>
+<jsp:useBean id="students" class="bean.StudentWrapper" scope="session"/>
 <html>
 <head>
     <title>Title</title>
@@ -30,24 +36,26 @@
                     <td align="center">教工号</td>
                     <td align="center">姓  名</td>
                     <td align="center">性  别</td>
+                    <td align="center">院  系</td>
                     <td align="center">密  码</td>
                     <td align="center">修  改</td>
                     <td align="center">删  除</td>
                 </tr>
                 <%
-                    List<Teacher> teacher = teachers.getList();
-                    for(int i = 0 ;i < teacher.size() ;i ++){
+                    List<Student> list = students.getList();
+                    for(int i = 0 ;i < list.size() ;i ++){
                 %>
                 <tr>
-                    <td align="center"><%=teacher.get(i).getTno()%></td>
-                    <td align="center"><%=teacher.get(i).getTname()%></td>
-                    <td align="center"><%=teacher.get(i).getTsex()%></td>
-                    <td align="center"><%=teacher.get(i).getPassword()%></td>
+                    <td align="center"><%=list.get(i).getSno()%></td>
+                    <td align="center"><%=list.get(i).getSname()%></td>
+                    <td align="center"><%=list.get(i).getSsex()%></td>
+                    <td align="center"><%=list.get(i).getSdept()%></td>
+                    <td align="center"><%=list.get(i).getPassword()%></td>
                     <td align="center">
-                        <a href="teacher_update.jsp?tno=<%=teacher.get(i).getTno()%>&tname=<%=teacher.get(i).getTname()%>&tsex=<%=teacher.get(i).getTsex()%>&password=<%=teacher.get(i).getPassword()%>">修改</a>
+                        <a href="student_update.jsp?sno=<%=list.get(i).getSno()%>&sname=<%=list.get(i).getSname()%>&ssex=<%=list.get(i).getSsex()%>&sdept=<%=list.get(i).getSdept()%>&password=<%=list.get(i).getPassword()%>">修改</a>
                     </td>
                     <td align="center">
-                        <a href="../../servlet/TeacherDeleteServlet?tno=<%=teacher.get(i).getTno()%>">删除</a>
+                        <a href="../../servlet/StudentDeleteServlet?sno=<%=list.get(i).getSno()%>">删除</a>
                     </td>
                 </tr>
                 <%
@@ -60,7 +68,6 @@
 </section>
 <!-- Bar -->
 <%@include file="../widght/bar.jsp"%>
-</div>
 
 </body>
 </html>

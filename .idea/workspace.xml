@@ -2,30 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdd457ed-6427-4e25-881c-f8bbda91b72c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/src/bean/Admin.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/src/bean/TeacherWrapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/src/dao/AdminDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/TeacherManageServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/TeacherUpdateServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/admin_main.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/teacher_update.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/teachers_manage.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/update_fail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/.idea/dataSources/2217d5e5-4063-4503-a6dc-a3a7a15ea176/_metadata_/metadata" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/.idea/dataSources/2217d5e5-4063-4503-a6dc-a3a7a15ea176/_metadata_/metadata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/.idea/dataSources/2217d5e5-4063-4503-a6dc-a3a7a15ea176/_metadata_/metadata.keystream" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/.idea/dataSources/2217d5e5-4063-4503-a6dc-a3a7a15ea176/_metadata_/metadata.keystream" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/.idea/dataSources/2217d5e5-4063-4503-a6dc-a3a7a15ea176/_metadata_/metadata.keystream.len" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/.idea/dataSources/2217d5e5-4063-4503-a6dc-a3a7a15ea176/_metadata_/metadata.keystream.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/.idea/dataSources/2217d5e5-4063-4503-a6dc-a3a7a15ea176/_metadata_/metadata.len" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/.idea/dataSources/2217d5e5-4063-4503-a6dc-a3a7a15ea176/_metadata_/metadata.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/.idea/dataSources/2217d5e5-4063-4503-a6dc-a3a7a15ea176/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/.idea/dataSources/2217d5e5-4063-4503-a6dc-a3a7a15ea176/_metadata_/metadata.values.at" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/.idea/dataSources/2217d5e5-4063-4503-a6dc-a3a7a15ea176/_metadata_/metadata_i" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/.idea/dataSources/2217d5e5-4063-4503-a6dc-a3a7a15ea176/_metadata_/metadata_i" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/.idea/dataSources/2217d5e5-4063-4503-a6dc-a3a7a15ea176.xml" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/.idea/dataSources/2217d5e5-4063-4503-a6dc-a3a7a15ea176.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/StudentDeleteServlet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/StudentManageServlet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/StudentUpdateServlet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/TeacherDeleteServlet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/student_update.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/students_manage.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/README.md" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/src/config/jdbc.properties" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/src/config/jdbc.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/src/bean/StudentWrapper.java" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/src/bean/StudentWrapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/src/dao/StudentDao.java" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/src/dao/StudentDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/src/dao/TeacherDao.java" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/src/dao/TeacherDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/LoginServlet.java" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/LoginServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/SelfMainServlet.java" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/SelfMainServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/StudentMainServlet.java" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/StudentMainServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/login_fail.jsp" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/login_fail.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/admin_main.jsp" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/admin_main.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/teachers_manage.jsp" afterPath="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/teachers_manage.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/../ElectiveManagementSystem/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,10 +54,6 @@
       <PATH_ELEMENT>
         <option name="myItemId" value="elective" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
       </PATH_ELEMENT>
     </PATH>
     <PATH>
@@ -114,7 +99,21 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="250">
+                <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -143,13 +142,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/dao/CourseDao.java" />
-        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/widght/bar.jsp" />
-        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/DetailServlet.java" />
-        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/dao/DetailClassDao.java" />
-        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/widght/nav_login.jsp" />
-        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/widght/banner.jsp" />
-        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/web/index.jsp" />
         <option value="dbtable:/d469b750/2217d5e5-4063-4503-a6dc-a3a7a15ea176/elective.sc" />
         <option value="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/widght/footer.jsp" />
         <option value="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/select_success.jsp" />
@@ -167,7 +159,6 @@
         <option value="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/clz.jsp" />
         <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/TeacherSelfServlet.java" />
         <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/ClassDetailServlet.java" />
-        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/bean/StudentWrapper.java" />
         <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/bean/DetailScs.java" />
         <option value="/d469b750/2217d5e5-4063-4503-a6dc-a3a7a15ea176/schema/elective/view/sc_view.sql" />
         <option value="/d469b750/2217d5e5-4063-4503-a6dc-a3a7a15ea176/schema/elective/view/clz_view.sql" />
@@ -184,15 +175,23 @@
         <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/bean/TeacherWrapper.java" />
         <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/LoginServlet.java" />
         <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/StudentMainServlet.java" />
-        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/admin_main.jsp" />
         <option value="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/teacher_update.jsp" />
-        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/teachers_manage.jsp" />
         <option value="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/update_fail.jsp" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2217d5e5-4063-4503-a6dc-a3a7a15ea176/console.sql" />
-        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/dao/TeacherDao.java" />
         <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/config/jdbc.properties" />
         <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/TeacherUpdateServlet.java" />
         <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/TeacherManageServlet.java" />
+        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/bean/StudentWrapper.java" />
+        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/StudentUpdateServlet.java" />
+        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/admin_main.jsp" />
+        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/StudentManageServlet.java" />
+        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/student_update.jsp" />
+        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/dao/TeacherDao.java" />
+        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/StudentDeleteServlet.java" />
+        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/students_manage.jsp" />
+        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/dao/StudentDao.java" />
+        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/teachers_manage.jsp" />
+        <option value="$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/TeacherDeleteServlet.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2217d5e5-4063-4503-a6dc-a3a7a15ea176/console.sql" />
         <option value="$PROJECT_DIR$/../ElectiveManagementSystem/README.md" />
       </list>
     </option>
@@ -209,6 +208,9 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -232,9 +234,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -351,44 +351,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ElectiveManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ElectiveManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ElectiveManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ElectiveManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bean" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -401,17 +367,17 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ElectiveManagementSystem" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="servlet" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\ElectiveManagementSystem\web\jsp\view" />
       <recent name="E:\ElectiveManagementSystem\src" />
       <recent name="E:\ElectiveManagementSystem\web" />
       <recent name="E:\ElectiveManagementSystem\web\WEB-INF" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="servlet" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\ElectiveManagementSystem" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -920,7 +886,8 @@
       <workItem from="1496133814892" duration="12498000" />
       <workItem from="1496149111522" duration="1378000" />
       <workItem from="1496204582547" duration="2646000" />
-      <workItem from="1496319743823" duration="11040000" />
+      <workItem from="1496319743823" duration="11175000" />
+      <workItem from="1496382939943" duration="4110000" />
     </task>
     <task id="LOCAL-00001" summary=":sparkles: feat: student">
       <created>1496048568417</created>
@@ -936,11 +903,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496146409142</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary=":sparkles: feat: admin-teacher">
+      <created>1496331515950</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1496331515950</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69376000" />
+    <option name="totallyTimeSpent" value="73621000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -958,7 +932,7 @@
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -973,12 +947,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.61921096" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.61921096" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32590052" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27609682" sideWeight="0.45969126" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27609682" sideWeight="0.5403088" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27987897" sideWeight="0.4528302" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27987897" sideWeight="0.5471698" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -998,7 +972,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value=":sparkles: feat: student" />
     <MESSAGE value=":sparkles: feat: teacher" />
-    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: feat: teacher" />
+    <MESSAGE value=":sparkles: feat: admin-teacher" />
+    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: feat: admin-teacher" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1011,91 +986,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/web/css/yq.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="270" column="21" lean-forward="false" selection-start-line="270" selection-start-column="21" selection-end-line="270" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/bean/StudentWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/d469b750/2217d5e5-4063-4503-a6dc-a3a7a15ea176/elective.class">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbSrc:///d469b750/2217d5e5-4063-4503-a6dc-a3a7a15ea176/schema/elective/view/clz_view.sql">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/bean/clz/DetailClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/d469b750/2217d5e5-4063-4503-a6dc-a3a7a15ea176/elective.course">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/bean/DetailScs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/util/TimeUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="54" column="53" lean-forward="true" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/bean/DetailSc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1325">
-          <caret line="89" column="18" lean-forward="false" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/web/img/logo.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1149,6 +1039,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="28" column="6" lean-forward="true" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1178,20 +1069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#156#157#0" expanded="true" />
-            <element signature="e#182#183#0" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#247#248#0" expanded="true" />
-            <element signature="e#279#280#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#349#350#0" expanded="true" />
-            <element signature="e#383#384#0" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#501#502#0" expanded="true" />
-            <element signature="e#543#544#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1208,7 +1085,7 @@
         <state relative-caret-position="-202">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <marker date="1496321213069" expanded="true" signature="395:446" ph="SELECT * FRO... admin" />
           </folding>
         </state>
@@ -1218,7 +1095,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1239,7 +1115,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="69" lean-forward="true" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1260,21 +1135,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="10" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="5" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/dao/StudentDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="21" column="57" lean-forward="false" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
-          <folding>
-            <element signature="method#login#0;class#StudentDao#0" expanded="false" />
-            <element signature="method#insertStudent#0;class#StudentDao#0" expanded="false" />
-            <element signature="method#queryStudentById#0;class#StudentDao#0" expanded="false" />
-            <marker date="1495971429191" expanded="true" signature="440:488" ph="SELECT * FRO... student" />
-            <marker date="1495971429191" expanded="true" signature="2179:2214" ph="SELECT * FRO... student" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1308,15 +1168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding>
-            <element signature="e#215#216#0" expanded="true" />
-            <element signature="e#250#251#0" expanded="true" />
-            <element signature="e#280#281#0" expanded="true" />
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1376,40 +1227,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2217d5e5-4063-4503-a6dc-a3a7a15ea176/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/TeacherUpdateServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="17" column="46" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/TeacherManageServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/teachers_manage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="36" column="18" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/teacher_update.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-227">
@@ -1418,23 +1235,177 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/config/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="78" lean-forward="false" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/clz.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="71" column="14" lean-forward="true" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="54" column="25" lean-forward="true" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+          <folding>
+            <element signature="method#doGet#0;class#LoginServlet#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/bean/Teacher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-177">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/TeacherUpdateServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="27" column="9" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="27" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/TeacherManageServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1150">
+          <caret line="73" column="65" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="73" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/bean/StudentWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding>
+            <element signature="e#165#166#0" expanded="true" />
+            <element signature="e#191#192#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/admin_main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="38" column="94" lean-forward="false" selection-start-line="38" selection-start-column="94" selection-end-line="38" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/widght/bar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/StudentManageServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1625">
+          <caret line="74" column="51" lean-forward="false" selection-start-line="74" selection-start-column="51" selection-end-line="74" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/student_update.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="59" lean-forward="true" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/dao/TeacherDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1040">
-          <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
+        <state relative-caret-position="148">
+          <caret line="188" column="7" lean-forward="true" selection-start-line="188" selection-start-column="7" selection-end-line="188" selection-end-column="7" />
           <folding>
             <element signature="method#login#0;class#TeacherDao#0" expanded="false" />
             <element signature="method#queryPagingClasses#0;class#TeacherDao#0" expanded="false" />
             <element signature="method#insert#0;class#TeacherDao#0" expanded="false" />
-            <marker date="1496330941128" expanded="true" signature="566:618" ph="SELECT * FRO... teacher" />
-            <marker date="1496330941128" expanded="true" signature="1619:1688" ph="SELECT * FRO... clz_view" />
-            <marker date="1496330941128" expanded="true" signature="1714:1757" ph="SELECT count... clz_view" />
-            <marker date="1496330941128" expanded="true" signature="3115:3168" ph="INSERT INTO teacher... " />
-            <marker date="1496330941128" expanded="true" signature="3829:3861" ph="SELECT * FRO... teacher" />
-            <marker date="1496330941128" expanded="true" signature="3887:3915" ph="SELECT count... teacher" />
-            <marker date="1496330941128" expanded="true" signature="5109:5155" ph="UPDATE teach... " />
-            <marker date="1496330941128" expanded="true" signature="5109:5167" ph="UPDATE teach... " />
+            <element signature="method#queryPagingTeachers#0;class#TeacherDao#0" expanded="false" />
+            <element signature="method#updateTeacher#0;class#TeacherDao#0" expanded="false" />
+            <marker date="1496386444000" expanded="true" signature="566:618" ph="SELECT * FRO... teacher" />
+            <marker date="1496386444000" expanded="true" signature="1619:1688" ph="SELECT * FRO... clz_view" />
+            <marker date="1496386444000" expanded="true" signature="1714:1757" ph="SELECT count... clz_view" />
+            <marker date="1496386444000" expanded="true" signature="3115:3168" ph="INSERT INTO teacher... " />
+            <marker date="1496386444000" expanded="true" signature="3850:3882" ph="SELECT * FRO... teacher" />
+            <marker date="1496386444000" expanded="true" signature="3908:3936" ph="SELECT count... teacher" />
+            <marker date="1496386444000" expanded="true" signature="5130:5176" ph="UPDATE teach... " />
+            <marker date="1496386444000" expanded="true" signature="5130:5188" ph="UPDATE teach... " />
+            <marker date="1496386444000" expanded="true" signature="5761:5794" ph="DELETE FROM " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d469b750/2217d5e5-4063-4503-a6dc-a3a7a15ea176/elective.student">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/StudentUpdateServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="25" column="99" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/students_manage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="57" column="47" lean-forward="false" selection-start-line="57" selection-start-column="47" selection-end-line="57" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/dao/StudentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="173" column="38" lean-forward="false" selection-start-line="173" selection-start-column="38" selection-end-line="173" selection-end-column="38" />
+          <folding>
+            <element signature="method#login#0;class#StudentDao#0" expanded="false" />
+            <element signature="method#insertStudent#0;class#StudentDao#0" expanded="false" />
+            <element signature="method#queryStudentById#0;class#StudentDao#0" expanded="false" />
+            <element signature="method#queryPagingStudent#0;class#StudentDao#0" expanded="false" />
+            <element signature="method#updateStudent#0;class#StudentDao#0" expanded="false" />
+            <marker date="1496386925438" expanded="true" signature="541:589" ph="SELECT * FRO... student" />
+            <marker date="1496386925438" expanded="true" signature="2280:2315" ph="SELECT * FRO... student" />
+            <marker date="1496386925438" expanded="true" signature="3228:3260" ph="SELECT * FRO... student" />
+            <marker date="1496386925438" expanded="true" signature="3286:3314" ph="SELECT count... student" />
+            <marker date="1496386925438" expanded="true" signature="4648:4715" ph="UPDATE stude... " />
+            <marker date="1496386925438" expanded="true" signature="5252:5285" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/StudentDeleteServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1451,45 +1422,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/config/jdbc.properties">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2217d5e5-4063-4503-a6dc-a3a7a15ea176/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="78" lean-forward="false" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="78" />
+        <state relative-caret-position="25">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/clz.jsp">
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/TeacherDeleteServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="71" column="14" lean-forward="true" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
+        <state relative-caret-position="149">
+          <caret line="17" column="46" lean-forward="true" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/admin_main.jsp">
+    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/web/jsp/view/teachers_manage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="34" column="87" lean-forward="false" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="87" />
+        <state relative-caret-position="34">
+          <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/src/servlet/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="54" column="25" lean-forward="true" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
-          <folding>
-            <element signature="method#doGet#0;class#LoginServlet#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../ElectiveManagementSystem/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="200">
-            <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+          <first_editor relative-caret-position="250">
+            <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
             <folding />
           </first_editor>
           <second_editor />
