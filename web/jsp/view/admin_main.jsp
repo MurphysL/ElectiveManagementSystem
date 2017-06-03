@@ -40,7 +40,7 @@
             </div>
             <div id="yq_frg3">
                 <img src="../../img/pic1.jpg" id="f_img3">
-                <a id="f_title3" class="title" href="../../servlet/ClassDetailServlet">课程管理</a>
+                <a id="f_title3" class="title" href="../../servlet/ClassManageServlet?page=1">课程管理</a>
             </div>
             <div id="yq_frg4">
 
