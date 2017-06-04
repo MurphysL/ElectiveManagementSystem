@@ -1,7 +1,5 @@
 package servlet;
 
-import bean.Sc;
-import bean.ScWrapper;
 import dao.SCDao;
 
 import javax.servlet.ServletException;
@@ -17,7 +15,7 @@ import java.io.IOException;
 @WebServlet(name = "SelectClassServlet", value = "/servlet/SelectClassServlet")
 public class SelectClassServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int cno = Integer.parseInt(request.getParameter("cno"));
+        /*int cno = Integer.parseInt(request.getParameter("cno"));
         int tno = Integer.parseInt(request.getParameter("tno"));
         int sno = Integer.parseInt(request.getParameter("sno"));
 
@@ -31,7 +29,7 @@ public class SelectClassServlet extends HttpServlet {
             response.sendRedirect("/jsp/view/update_success.jsp");
         }else{
             //选课失败
-        }
+        }*/
 
     }
 

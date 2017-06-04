@@ -1,6 +1,9 @@
 package servlet;
 
-import bean.*;
+import bean.admin.Admin;
+import bean.sc.Sc;
+import bean.stu.Student;
+import bean.teacher.Teacher;
 import dao.AdminDao;
 import dao.SCDao;
 import dao.StudentDao;
@@ -27,7 +30,7 @@ public class LoginServlet extends HttpServlet {
 
         switch (type){
             case "student":
-                Student student = StudentDao.login(no, password);
+                /*Student student = StudentDao.login(no, password);
                 if(student != null){
                     request.getSession().setAttribute("student", student);
 
@@ -43,28 +46,34 @@ public class LoginServlet extends HttpServlet {
                         request.getSession().setAttribute("sc", wrapper);
                         response.sendRedirect("SelfMainServlet?page=1");
                     }
-                }
+                }else{
+                    response.sendRedirect("../jsp/view/login_fail.jsp"); // 登录失败
+                }*/
                 break;
             case "teacher":
                 Teacher teacher = TeacherDao.login(no, password); // 教师个人信息
                 if(teacher != null){
+                    System.out.println(teacher.toString());
+
                     request.getSession().setAttribute("teacher", teacher);
-                    response.sendRedirect("TeacherSelfServlet?page=1");
+                    response.sendRedirect("teacher/TeacherInfoServlet?page=1");
+                }else{
+                    response.sendRedirect("../jsp/view/login_fail.jsp"); // 登录失败
                 }
                 break;
             case "admin":
                 Admin admin = AdminDao.login(no, password);
                 if(admin != null){
                     request.getSession().setAttribute("admin", admin);
-                    request.getRequestDispatcher("../jsp/view/admin_main.jsp").forward(request, response);
+                    request.getRequestDispatcher("../jsp/admin/admin_main.jsp").forward(request, response);
+                }else{
+                    response.sendRedirect("../jsp/view/login_fail.jsp"); // 登录失败
                 }
                 break;
             default:
+                response.sendRedirect("../jsp/view/login_fail.jsp"); // 登录失败
                 break;
         }
-        // 登录失败
-        response.sendRedirect("../jsp/view/login_fail.jsp");
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

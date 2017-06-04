@@ -1,7 +1,7 @@
 package servlet;
 
-import bean.Student;
-import bean.clz.DetailClasses;
+import bean.stu.Student;
+import bean.clz.DetailClassList;
 import config.Config;
 import dao.DetailClassDao;
 
@@ -18,11 +18,11 @@ import java.io.IOException;
 @WebServlet(name = "SelfMainServlet", value = "/servlet/SelfMainServlet")
 public class SelfMainServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");
+        /*request.setCharacterEncoding("utf-8");
         int page = Integer.parseInt(request.getParameter("page"));
         Student student = (Student) request.getSession().getAttribute("student");
 
-        DetailClasses classes = DetailClassDao.querySelectedPagingDetailClasses(student.getSno(), page);
+        DetailClassList classes = DetailClassDao.querySelectedPagingDetailClasses(student.getSno(), page);
         int num = classes.getNum();
 
         int pages;//总页数
@@ -74,7 +74,7 @@ public class SelfMainServlet extends HttpServlet {
         }
         request.getSession().setAttribute("bar", sb.toString());
         request.getSession().setAttribute("self_classes", classes);
-        response.sendRedirect("/jsp/view/self_main.jsp");
+        response.sendRedirect("/jsp/view/self_main.jsp");*/
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

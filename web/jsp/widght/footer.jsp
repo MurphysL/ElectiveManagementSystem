@@ -8,11 +8,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <footer>
     <div>
-       <%-- <ul>
-            <li><a href="#">微  博</a></li>
-            <li><a href="#">Q   Q</a></li>
-            <li><a href="#">微  信</a></li>
-            <li><a href="#">Github</a></li>
-        </ul>--%>
     </div>
 </footer>

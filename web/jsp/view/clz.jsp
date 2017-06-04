@@ -9,14 +9,14 @@
 <%@ page import="dao.SCDao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="clz" class="bean.clz.DetailClass" scope="session"/>
-<jsp:useBean id="student" class="bean.Student" scope="session"/>
+<jsp:useBean id="student" class="bean.stu.Student" scope="session"/>
 <!DOCTYPE HTML>
 <html>
 <head>
     <title><%=clz.getCname()%>(<%=clz.getTname()%>)</title>
     <meta charset="utf-8" />
     <link rel="icon" href="../../img/logo.png" type="image/x-icon"/>
-    <link rel="stylesheet" type="text/css" href="../../css/yq.css">
+    <link rel="stylesheet" type="text/css" href="../../css/ems.css">
     <link rel="stylesheet" type="text/css" href="../../css/normalize.css">
 </head>
 <body>

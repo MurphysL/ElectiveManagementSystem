@@ -1,93 +1,111 @@
 package bean.clz;
 
-/**
- * 课程详细信息
- */
+
 public class DetailClass {
-    private int Cno;
-    private String Cname;
-    private int Ccredit;
-    private int Tno;
-    private String Tname;
-    private String Tsex;
-    private String Address;
-    private Long Time;
+    private int clzno;
+    private long start;
+    private String address;
+    private int cno;
+    private String cname;
+    private int credit;
+    private int duration;
+    private int tno;
+    private String tname;
+    private String sex;
 
-    public int getCno() {
-        return Cno;
+    public int getClzno() {
+        return clzno;
     }
 
-    public void setCno(int cno) {
-        Cno = cno;
+    public void setClzno(int clzno) {
+        this.clzno = clzno;
     }
 
-    public String getCname() {
-        return Cname;
+    public long getStart() {
+        return start;
     }
 
-    public void setCname(String cname) {
-        Cname = cname;
-    }
-
-    public int getCcredit() {
-        return Ccredit;
-    }
-
-    public void setCcredit(int ccredit) {
-        Ccredit = ccredit;
-    }
-
-    public int getTno() {
-        return Tno;
-    }
-
-    public void setTno(int tno) {
-        Tno = tno;
-    }
-
-    public String getTname() {
-        return Tname;
-    }
-
-    public void setTname(String tname) {
-        Tname = tname;
-    }
-
-    public String getTsex() {
-        return Tsex;
-    }
-
-    public void setTsex(String tsex) {
-        Tsex = tsex;
+    public void setStart(long start) {
+        this.start = start;
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void setAddress(String address) {
-        Address = address;
+        this.address = address;
     }
 
-    public Long getTime() {
-        return Time;
+    public int getCno() {
+        return cno;
     }
 
-    public void setTime(Long time) {
-        Time = time;
+    public void setCno(int cno) {
+        this.cno = cno;
+    }
+
+    public String getCname() {
+        return cname;
+    }
+
+    public void setCname(String cname) {
+        this.cname = cname;
+    }
+
+    public int getCredit() {
+        return credit;
+    }
+
+    public void setCredit(int credit) {
+        this.credit = credit;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public int getTno() {
+        return tno;
+    }
+
+    public void setTno(int tno) {
+        this.tno = tno;
+    }
+
+    public String getTname() {
+        return tname;
+    }
+
+    public void setTname(String tname) {
+        this.tname = tname;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     @Override
     public String toString() {
         return "DetailClass{" +
-                "Cno=" + Cno +
-                ", Cname='" + Cname + '\'' +
-                ", Ccredit=" + Ccredit +
-                ", Tno=" + Tno +
-                ", Tname='" + Tname + '\'' +
-                ", Tsex='" + Tsex + '\'' +
-                ", Address='" + Address + '\'' +
-                ", Time=" + Time +
+                "clzno=" + clzno +
+                ", start=" + start +
+                ", address=" + address +
+                ", cno=" + cno +
+                ", cname='" + cname + '\'' +
+                ", credit=" + credit +
+                ", duration=" + duration +
+                ", tno=" + tno +
+                ", tname='" + tname + '\'' +
+                ", sex='" + sex + '\'' +
                 '}';
     }
 }

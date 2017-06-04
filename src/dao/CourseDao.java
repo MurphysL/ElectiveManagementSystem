@@ -1,9 +1,9 @@
 package dao;
 
-import bean.Course;
-import bean.Courses;
+import bean.course.Course;
+import bean.course.Courses;
 import config.Config;
-import db.ConnUtil;
+import util.ConnUtil;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,13 +22,13 @@ public class CourseDao {
      * @param sno 学号
      * @return 课程包装类
      */
-    public static Courses quertSeletedCourses(int sno){
+    /*public static Courses quertSeletedCourses(int sno){
         Courses courses = new Courses();
         List<Course> list = new ArrayList<>();
         int num = 0;
         String sql = "SELECT * FROM course , sc WHERE course.Cno = sc.Cno AND Sno = ? ";
         try {
-            PreparedStatement ps = ConnUtil.getInstance().prepareStatement(sql);
+            PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
             ps.setInt(1, sno);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
@@ -45,9 +45,9 @@ public class CourseDao {
         courses.setNum(num);
         courses.setCourses(list);
         return courses;
-    }
+    }*/
 
-    public static Courses quertSeletedPagingCourses(int sno, int page){
+    /*public static Courses quertSeletedPagingCourses(int sno, int page){
         Courses courses = new Courses();
         List<Course> list = new ArrayList<>();
         int num = 0;
@@ -57,7 +57,7 @@ public class CourseDao {
         String sql = "SELECT * FROM course , sc WHERE course.Cno = sc.Cno AND Sno = ? LIMIT ?, ?";
         String sql2 = "SELECT count(*) FROM course , sc WHERE course.Cno = sc.Cno AND Sno = ?";
         try {
-            PreparedStatement ps = ConnUtil.getInstance().prepareStatement(sql);
+            PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
             ps.setInt(1, sno);
             ps.setInt(2, start);
             ps.setInt(3, end);
@@ -70,7 +70,7 @@ public class CourseDao {
                 list.add(course);
             }
 
-            PreparedStatement ps2 = ConnUtil.getInstance().prepareStatement(sql2);
+            PreparedStatement ps2 = ConnUtil.getConn().prepareStatement(sql2);
             ps2.setInt(1, sno);
             ResultSet rs2 = ps2.executeQuery();
             while(rs2.next()){
@@ -82,7 +82,7 @@ public class CourseDao {
         courses.setNum(num);
         courses.setCourses(list);
         return courses;
-    }
+    }*/
 
     /**
      * 查询学生目前可选科目（分页)
@@ -90,7 +90,7 @@ public class CourseDao {
      * @param page 页数
      * @return 科目包装类
      */
-    public static Courses queryPagingCourses(int sno, int page){
+    /*public static Courses queryPagingCourses(int sno, int page){
         Courses courses = new Courses();
         int num = 0;
         List<Course> list = new ArrayList<>();
@@ -99,7 +99,7 @@ public class CourseDao {
         String sql = "SELECT * FROM course WHERE Cno NOT IN (SELECT Cno FROM sc WHERE Sno= ?) LIMIT ?, ?";
         String sql2 = "SELECT count(*) FROM course WHERE Cno NOT IN (SELECT Cno FROM sc WHERE Sno= ?)";
         try {
-            PreparedStatement ps = ConnUtil.getInstance().prepareStatement(sql);
+            PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
             ps.setInt(1, sno);
             ps.setInt(2, start);
             ps.setInt(3, end);
@@ -112,7 +112,7 @@ public class CourseDao {
                 list.add(course);
             }
 
-            PreparedStatement ps2 = ConnUtil.getInstance().prepareStatement(sql2);
+            PreparedStatement ps2 = ConnUtil.getConn().prepareStatement(sql2);
             ps2.setInt(1, sno);
 
             ResultSet rs2 = ps2.executeQuery();
@@ -127,5 +127,5 @@ public class CourseDao {
         courses.setNum(num);
 
         return courses;
-    }
+    }*/
 }

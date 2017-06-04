@@ -1,7 +1,7 @@
 package servlet;
 
-import bean.Student;
-import bean.clz.DetailClasses;
+import bean.stu.Student;
+import bean.clz.DetailClassList;
 import config.Config;
 import dao.DetailClassDao;
 
@@ -18,11 +18,11 @@ import java.io.IOException;
 @WebServlet(name = "StudentMainServlet", value = "/servlet/StudentMainServlet")
 public class StudentMainServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int page = Integer.parseInt(request.getParameter("page"));
+        /*int page = Integer.parseInt(request.getParameter("page"));
         Student student = (Student) request.getSession().getAttribute("student");
         int sno = student.getSno();
 
-        DetailClasses classes = DetailClassDao.queryPagingDetailClasses(sno, page);
+        DetailClassList classes = DetailClassDao.queryPagingDetailClasses(sno, page);
         int num = classes.getNum();
 
         int pages;//总页数
@@ -74,7 +74,7 @@ public class StudentMainServlet extends HttpServlet {
         }
         request.getSession().setAttribute("bar", sb.toString());
         request.getSession().setAttribute("classes", classes);
-        response.sendRedirect("/jsp/view/student_main.jsp");
+        response.sendRedirect("/jsp/view/student_main.jsp");*/
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

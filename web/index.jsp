@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>NUC选修管理系统</title>
     <link rel="icon" href="img/logo.png" type="image/x-icon"/>
-    <link rel="stylesheet" type="text/css" href="css/yq.css">
+    <link rel="stylesheet" type="text/css" href="css/ems.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <script src="js/yq.js" type="text/javascript"> </script>
 </head>

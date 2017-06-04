@@ -1,14 +1,14 @@
 
 <%@ page import="bean.clz.DetailClass" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="classes" class="bean.clz.DetailClasses" scope="session"/>
-<jsp:useBean id="sc" class="bean.ScWrapper" scope="session"/>
+<jsp:useBean id="classes" class="bean.clz.DetailClassList" scope="session"/>
+<jsp:useBean id="sc" class="bean.sc.ScWrapper" scope="session"/>
 <html>
 <head>
     <meta charset="utf-8">
     <title>NUC选修管理系统</title>
     <link rel="icon" href="../../img/logo.png" type="image/x-icon"/>
-    <link rel="stylesheet" type="text/css" href="../../css/yq.css">
+    <link rel="stylesheet" type="text/css" href="../../css/ems.css">
     <link rel="stylesheet" type="text/css" href="../../css/normalize.css">
     <script src="../../js/yq.js" type="text/javascript"> </script>
 </head>

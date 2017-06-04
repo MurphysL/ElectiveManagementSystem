@@ -1,20 +1,17 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="util.TimeUtil" %>
-<%@ page import="bean.DetailSc" %>
+<%@ page import="bean.sc.DetailSc" %>
 <%@ page import="java.util.List" %>
-<%--
-  view 耦合性 待修改
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="scs" class="bean.DetailScs" scope="session"/>
+<jsp:useBean id="scs" class="bean.sc.DetailSCList" scope="session"/>
 <jsp:useBean id="clz" class="bean.clz.DetailClass" scope="session"/>
 <html>
 <head>
     <title><%=clz.getCname()%>(<%=clz.getTname()%>)</title>
     <meta charset="utf-8" />
     <link rel="icon" href="../../img/logo.png" type="image/x-icon"/>
-    <link rel="stylesheet" type="text/css" href="../../css/yq.css">
+    <link rel="stylesheet" type="text/css" href="../../css/ems.css">
     <link rel="stylesheet" type="text/css" href="../../css/normalize.css">
 </head>
 <body>
@@ -36,15 +33,15 @@
             <p class="info">教师：<%=clz.getTname()%> ( no.<%=clz.getTno()%> )</p>
             <%
                 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-                Date date = new Date(clz.getTime()*1000);
+                Date date = new Date(clz.getStart()*1000);
                 String time = format.format(date);
             %>
             <p class="info">开课时间：<%=time%></p>
             <p class="info">开课地址：<%=clz.getAddress()%></p>
-            <p class="info">学分：<%=clz.getCcredit()%></p>
+            <p class="info">学分：<%=clz.getCredit()%></p>
             <%
                 long[] terms = TimeUtil.getTermTimeStamp();
-                if(clz.getTime() > terms[0] && clz.getTime() < terms[1]){
+                if(clz.getStart() > terms[0] && clz.getStart() < terms[1]){
             %>
             <p class="info">状态：进行中</p>
             <%
@@ -69,7 +66,7 @@
                 <tr>
                     <td align="center"><%=sc.get(i).getSname()%>(<%=sc.get(i).getSno()%>)</td>
                     <td align="center"><%=sc.get(i).getSsex()%></td>
-                    <td align="center"><%=sc.get(i).getSdept()%></td>
+                    <td align="center"><%=sc.get(i).getDept()%></td>
                     <td align="center"><%=sc.get(i).getGrade()%></td>
                 </tr>
                 <%

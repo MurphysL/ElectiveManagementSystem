@@ -1,13 +1,13 @@
 <%@ page import="bean.clz.DetailClass" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="self_classes" class="bean.clz.DetailClasses" scope="session"/>
-<jsp:useBean id="student" class="bean.Student" scope="session"/>
+<jsp:useBean id="self_classes" class="bean.clz.DetailClassList" scope="session"/>
+<jsp:useBean id="student" class="bean.stu.Student" scope="session"/>
 <html>
 <head>
     <meta charset="utf-8">
     <title>MBlog</title>
     <link rel="icon" href="../../img/logo.png" type="image/x-icon"/>
-    <link rel="stylesheet" type="text/css" href="../../css/yq.css">
+    <link rel="stylesheet" type="text/css" href="../../css/ems.css">
     <link rel="stylesheet" type="text/css" href="../../css/normalize.css">
     <script src="../../js/yq.js" type="text/javascript"> </script>
 </head>
