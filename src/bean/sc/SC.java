@@ -1,7 +1,7 @@
 package bean.sc;
 
 
-public class Sc {
+public class SC {
     private int clzno;
     private int sno;
     private int Grade;
@@ -32,7 +32,7 @@ public class Sc {
 
     @Override
     public String toString() {
-        return "Sc{" +
+        return "SC{" +
                 "clzno=" + clzno +
                 ", sno=" + sno +
                 ", Grade=" + Grade +

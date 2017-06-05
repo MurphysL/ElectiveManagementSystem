@@ -1,4 +1,4 @@
-package servlet.clz;
+package servlet.teacher;
 
 import bean.clz.DetailClass;
 import bean.sc.DetailSCList;
@@ -15,8 +15,8 @@ import java.io.IOException;
 /**
  * 课程详细信息
  */
-@WebServlet(name = "ClassDetailServlet", value = "/servlet/clz/ClassDetailServlet")
-public class ClassDetailServlet extends HttpServlet {
+@WebServlet(name = "TeacherClassDetailServlet", value = "/servlet/teacher/TeacherClassDetailServlet")
+public class TeacherClassDetailServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         int clzno = Integer.parseInt(request.getParameter("clzno"));
@@ -26,7 +26,7 @@ public class ClassDetailServlet extends HttpServlet {
         DetailSCList scs = DetailSCDao.quertSelectScs(clzno);
         request.getSession().setAttribute("scs", scs);
 
-        response.sendRedirect("../../../jsp/view/teacher_clz.jsp");
+        response.sendRedirect("../../jsp/teacher/teacher_clz.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

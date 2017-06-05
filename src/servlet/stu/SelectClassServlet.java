@@ -1,5 +1,6 @@
-package servlet;
+package servlet.stu;
 
+import bean.sc.Choose;
 import dao.SCDao;
 
 import javax.servlet.ServletException;
@@ -12,24 +13,21 @@ import java.io.IOException;
 /**
  * 选课
  */
-@WebServlet(name = "SelectClassServlet", value = "/servlet/SelectClassServlet")
+@WebServlet(name = "SelectClassServlet", value = "/servlet/stu/SelectClassServlet")
 public class SelectClassServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*int cno = Integer.parseInt(request.getParameter("cno"));
-        int tno = Integer.parseInt(request.getParameter("tno"));
+        int clzno = Integer.parseInt(request.getParameter("clzno"));
         int sno = Integer.parseInt(request.getParameter("sno"));
 
-        int result = SCDao.insertClass(cno, tno, sno);
-        if(result > 0){
-            Sc sc = SCDao.queryThisTerm(sno);
-            ScWrapper wrapper = new ScWrapper();
-            wrapper.setSc(sc);
-            wrapper.setNull(false);
-            request.getSession().setAttribute("sc", wrapper);
-            response.sendRedirect("/jsp/view/update_success.jsp");
+        if(SCDao.insertClass(clzno, sno)){
+            Choose choose = new Choose();
+            choose.setChoose(true);
+            request.getSession().setAttribute("choose", choose);
+            response.sendRedirect("../../jsp/view/update_success.jsp");
         }else{
             //选课失败
-        }*/
+            response.sendRedirect("../../jsp/stu/delete_fail.jsp");
+        }
 
     }
 

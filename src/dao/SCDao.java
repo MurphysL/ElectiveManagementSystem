@@ -1,5 +1,12 @@
 package dao;
 
+import util.ConnUtil;
+import util.TimeUtil;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  * 选课信息类
  */
@@ -8,139 +15,82 @@ public class SCDao {
     /**
      * 查询当前选课状态
      * @param sno 学号
-     * @return 选课信息
+     * @return 是否已选课
      */
-    /*public static Sc queryThisTerm(int sno){
-        Sc sc = null;
+    public static boolean queryThisTerm(int sno){
         long[] term = TimeUtil.getTermTimeStamp();
-        System.out.println(term[0] + " " + term[1]);
-        String sql = "SELECT * FROM sc WHERE Sno = ? AND Time >= ? AND Time <= ?";
+        System.out.println("term" + term[0] + " " + term[1]);
+        String sql = "SELECT * FROM sc_view WHERE sno = ? AND start >= ? AND start <= ?";
         try {
             PreparedStatement ps  = ConnUtil.getConn().prepareStatement(sql);
             ps.setInt(1, sno);
             ps.setLong(2, term[0]);
             ps.setLong(3, term[1]);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                sc = new Sc();
-                sc.setCno(rs.getInt(1));
-                sc.setTno(rs.getInt(2));
-                sc.setSno(rs.getInt(3));
-                sc.setGrade(rs.getInt(4));
-                sc.setTime(rs.getLong(5));
+            if(rs.next()){
+                return true;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return sc;
-    }*/
-
-
-
-
-
-    /**
-     * 查询成绩
-     * @param cno 科目号
-     * @param tno 教师号
-     * @param sno 学号
-     * @return 成绩
-     */
-    /*public static int queryGrade(int cno, int tno, int sno){
-        int grade = 0;
-        String sql = "SELECT Grade FROM sc WHERE Cno = ? AND Tno = ? AND  Sno = ?";
-        try {
-            PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
-            ps.setInt(1, cno);
-            ps.setInt(2, tno);
-            ps.setInt(3, sno);
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                grade = rs.getInt(1);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return grade;
-    }*/
+        return false;
+    }
 
     /**
      * 选课
-     * @param cno 科目号
-     * @param tno 教师号
+     * @param clzno 课程号
      * @param sno 学号
      * @return 更改条数
      */
-    /*public static int insertClass(int cno, int tno, int sno){
-        int result = 0;
-        long now = System.currentTimeMillis()/1000;
-
-        if(queryThisTerm(sno) != null){
-            deleteClass(sno);
+    public static boolean insertClass(int clzno, int sno){
+        if(queryThisTerm(sno)){ // 已选课程
+            if(deleteClass(sno)){ // 删除课程
+                System.out.println("删除成功");
+                String sql = "INSERT sc(clzno, sno) VALUES (?, ?)";
+                try {
+                    PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
+                    ps.setInt(1, clzno);
+                    ps.setInt(2, sno);
+                    if(ps.executeUpdate() > 0)
+                        return true;
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
-
-        String sql = "INSERT sc(Cno, Tno, Sno, Time) VALUES (?, ?, ?, ?)";
-        try {
-            PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
-            ps.setInt(1, cno);
-            ps.setInt(2, tno);
-            ps.setInt(3, sno);
-            ps.setLong(4, now);
-            result = ps.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return result;
-    }*/
+        return false;
+    }
 
     /**
      * 退课（本学期）
      * @param sno 学号
-     * @return 更改条数
+     * @return 是否更改成功
      */
-    /*public static int deleteClass(int sno){
-        int num = 0;
-        Sc sc = queryThisTerm(sno);
+    private static boolean deleteClass(int sno){
         long[] terms = TimeUtil.getTermTimeStamp();
-        if(sc != null){
-            String sql = "DELETE FROM sc WHERE Sno=? AND Time BETWEEN ? AND ?";
+        if(queryThisTerm(sno)){
+            String sql1 = "SELECT clzno FROM sc_view WHERE sno = ? AND start >= ? AND start <= ?";
+            String sql = "DELETE FROM sc WHERE clzno =?";
             try {
-                PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
-                ps.setInt(1, sno);
-                ps.setLong(2, terms[0]);
-                ps.setLong(3, terms[1]);
-                num = ps.executeUpdate();
+                PreparedStatement ps1 = ConnUtil.getConn().prepareStatement(sql1);
+                ps1.setInt(1, sno);
+                ps1.setLong(2, terms[0]);
+                ps1.setLong(3, terms[1]);
+                ResultSet rs = ps1.executeQuery();
+                if(rs.next()){
+                    int clzno = rs.getInt(1);
+
+                    PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
+                    ps.setInt(1, clzno);
+                    if (ps.executeUpdate() > 0)
+                        return true;
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        return num;
-    }*/
-
-
-
-    /**
-     * 查询课程数目
-     * @param tno 教工号
-     * @return
-     */
-    /*public static int queryCount(int tno){
-        int num = 0;
-        String sql = "SELECT count(*) FROM detail_clz WHERE tno = ?";
-        try {
-            PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
-            ps.setInt(1, tno);
-            ResultSet rs2 = ps.executeQuery();
-            while(rs2.next()){
-                num = rs2.getInt(1);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return num;
-    }*/
-
+        return false;
+    }
 
 
 }

@@ -1,12 +1,6 @@
-
-<%--
-成绩耦合
-待修改 clz_view!!!!
---%>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="util.TimeUtil" %>
-<%@ page import="dao.SCDao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="clz" class="bean.clz.DetailClass" scope="session"/>
 <jsp:useBean id="student" class="bean.stu.Student" scope="session"/>
@@ -25,15 +19,15 @@
 <div id="main_bg">
     <nav>
         <div id="logo">
-            <a href="../../servlet/MainServlet?page=1" >NUC选修管理系统</a>
+            <a href="../../servlet/stu/StudentMainServlet?page=1" >NUC选修管理系统</a>
         </div>
         <%
             long[] terms = TimeUtil.getTermTimeStamp();
-            if(clz.getTime() > terms[0] && clz.getTime() < terms[1]){
+            long now = System.currentTimeMillis()/ 1000;
+            if(clz.getStart() > terms[0] && clz.getStart()+ TimeUtil.A_WEEK*clz.getDuration() < now){
         %>
             <ul>
-                <li><a href="../../servlet/SelectClassServlet?cno=<%=clz.getCno()%>&tno=<%=clz.getTno()%>&sno=<%=student.getSno()%>">选课</a></li>
-                <%--<li><a href="../../servlet/DeleteClassServlet?cno=<%=clz.getCno()%>&tno=<%=clz.getTno()%>&sno=<%=student.getSno()%>">退课</a></li>--%>
+                <li><a href="../../servlet/stu/SelectClassServlet?clzno=<%=clz.getClzno()%>&sno=<%=student.getSno()%>">选课</a></li>
             </ul>
         <%
             }
@@ -53,21 +47,20 @@
             <p class="info">教师：<%=clz.getTname()%> ( no.<%=clz.getTno()%> )</p>
             <%
                 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-                Date date = new Date(clz.getTime()*1000);
+                Date date = new Date(clz.getStart()*1000);
                 String time = format.format(date);
             %>
             <p class="info">开课时间：<%=time%></p>
+            <p class="info">周数：<%=clz.getDuration()%> 周</p>
             <p class="info">开课地址：<%=clz.getAddress()%></p>
-            <p class="info">学分：<%=clz.getCcredit()%></p>
+            <p class="info">学分：<%=clz.getCredit()%></p>
             <%
-                if(clz.getTime() > terms[0] && clz.getTime() < terms[1]){
+                if(clz.getStart() > terms[0] && clz.getStart() < terms[1]){
             %>
                     <p class="info">状态：进行中</p>
             <%
                 }else{
-                    int grade = SCDao.queryGrade(clz.getCno(), clz.getTno(), student.getSno());
             %>
-                    <p class="info"><%=grade%></p>
                     <p class="info">状态：已结束</p>
             <%
                 }
@@ -78,7 +71,7 @@
 </section>
 
 <!-- Footer -->
-<%@include file="../widght/footer.jsp"%>
+<footer></footer>
 
 </body>
 </html>

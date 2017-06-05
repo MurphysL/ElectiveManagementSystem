@@ -4,13 +4,13 @@ import java.util.List;
 
 
 public class DetailSCList {
-    private List<DetailSc> list;
+    private List<DetailSC> list;
 
-    public List<DetailSc> getList() {
+    public List<DetailSC> getList() {
         return list;
     }
 
-    public void setList(List<DetailSc> list) {
+    public void setList(List<DetailSC> list) {
         this.list = list;
     }
 }

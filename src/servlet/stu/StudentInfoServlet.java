@@ -1,9 +1,9 @@
-package servlet.teacher;
+package servlet.stu;
 
-import bean.teacher.Teacher;
-import bean.clz.DetailClassList;
+import bean.sc.DetailSCList;
+import bean.stu.Student;
 import config.Config;
-import dao.DetailClassDao;
+import dao.DetailSCDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,17 +13,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 教师个人信息管理
+ * 学生信息管理
  */
-@WebServlet(name = "TeacherInfoServlet", value = "/servlet/teacher/TeacherInfoServlet")
-public class TeacherInfoServlet extends HttpServlet {
+@WebServlet(name = "StudentInfoServlet", value = "/servlet/stu/StudentInfoServlet")
+public class StudentInfoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         int page = Integer.parseInt(request.getParameter("page"));
-        int tno = ((Teacher)request.getSession().getAttribute("teacher")).getTno();
-        DetailClassList classes = DetailClassDao.queryPagingClass4Teacher(tno, page);
-
-        int num = DetailClassDao.getClzCount4Teacher(tno);
+        Student student = (Student) request.getSession().getAttribute("student");
+        System.out.println(student.toString());
+        DetailSCList sc = DetailSCDao.querySelectedPagingDetailSC(student.getSno(), page);
+        int num = DetailSCDao.getSelectedSCCount(student.getSno());
 
         int pages;//总页数
         StringBuilder sb = new StringBuilder();
@@ -34,7 +34,7 @@ public class TeacherInfoServlet extends HttpServlet {
         }
         for(int i = 1 ;i <= pages ;i ++){
             if(i == page){
-                sb.append("<a href=../../servlet/teacher/TeacherInfoServlet?page=")
+                sb.append("<a href=../../servlet/StudentInfoServlet?page=")
                         .append(i)
                         .append(" id=\"select\" style=\"")
                         .append(Config.CSS_SELECT)
@@ -42,7 +42,7 @@ public class TeacherInfoServlet extends HttpServlet {
                         .append(i)
                         .append("</a>");
             }else{
-                sb.append("<a href=../../servlet/teacher/TeacherInfoServlet?page=")
+                sb.append("<a href=../../servlet/StudentInfoServlet?page=")
                         .append(i)
                         .append(" id=\"select\" style=\"")
                         .append(Config.CSS_UNSELECT)
@@ -52,8 +52,8 @@ public class TeacherInfoServlet extends HttpServlet {
             }
         }
         request.getSession().setAttribute("bar", sb.toString());
-        request.getSession().setAttribute("classes", classes);
-        response.sendRedirect("/jsp/teacher/teacher_info.jsp");
+        request.getSession().setAttribute("scs", sc);
+        response.sendRedirect("/jsp/stu/student_info.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

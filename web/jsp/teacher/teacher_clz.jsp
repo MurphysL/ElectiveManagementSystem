@@ -1,7 +1,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="util.TimeUtil" %>
-<%@ page import="bean.sc.DetailSc" %>
+<%@ page import="bean.sc.DetailSC" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="scs" class="bean.sc.DetailSCList" scope="session"/>
@@ -20,7 +20,7 @@
 <div id="main_bg">
     <nav>
         <div id="logo">
-            <a href="../../servlet/MainServlet?page=1" >NUC选修管理系统</a>
+            <a href="../../servlet/stu/StudentMainServlet?page=1" >NUC选修管理系统</a>
         </div>
     </nav>
 </div>
@@ -41,7 +41,8 @@
             <p class="info">学分：<%=clz.getCredit()%></p>
             <%
                 long[] terms = TimeUtil.getTermTimeStamp();
-                if(clz.getStart() > terms[0] && clz.getStart() < terms[1]){
+                long now = System.currentTimeMillis()/ 1000;
+                if(clz.getStart() > terms[0] && clz.getStart()+ TimeUtil.A_WEEK*clz.getDuration() < now){
             %>
             <p class="info">状态：进行中</p>
             <%
@@ -60,14 +61,14 @@
                     <td align="center">成  绩</td>
                 </tr>
                 <%
-                    List<DetailSc> sc = scs.getList();
-                    for(int i = 0 ;i < sc.size() ;i ++){
+                    List<DetailSC> Sc = scs.getList();
+                    for(int i = 0 ;i < Sc.size() ;i ++){
                 %>
                 <tr>
-                    <td align="center"><%=sc.get(i).getSname()%>(<%=sc.get(i).getSno()%>)</td>
-                    <td align="center"><%=sc.get(i).getSsex()%></td>
-                    <td align="center"><%=sc.get(i).getDept()%></td>
-                    <td align="center"><%=sc.get(i).getGrade()%></td>
+                    <td align="center"><%=Sc.get(i).getSname()%>(<%=Sc.get(i).getSno()%>)</td>
+                    <td align="center"><%=Sc.get(i).getSsex()%></td>
+                    <td align="center"><%=Sc.get(i).getDept()%></td>
+                    <td align="center"><%=Sc.get(i).getGrade()%></td>
                 </tr>
                 <%
                     }
@@ -79,5 +80,5 @@
 </section>
 
 <!-- Footer -->
-<%@include file="../widght/footer.jsp"%>
+<footer></footer>
 </html>

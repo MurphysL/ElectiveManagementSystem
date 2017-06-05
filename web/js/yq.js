@@ -37,9 +37,9 @@ function realSysTime() {
 	var time1 = now.Format("hh : mm : ss");
 	var time2 = now.Format("yyyy年MM月dd日")+week;
 
-	var clock1 = document.getElementById("yq_time1");
+	var clock1 = document.getElementById("time1");
 	clock1.innerHTML =  time1;
-	var clock2 = document.getElementById("yq_time2");
+	var clock2 = document.getElementById("time2");
 	clock2.innerHTML =  time2;
 }
 

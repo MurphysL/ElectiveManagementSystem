@@ -22,22 +22,22 @@
                 <a href="../../servlet/teacher/TeacherInfoServlet?page=1" >NUC选修管理系统</a>
             </div>
         </nav>
-        <div id ="yq_banner">
+        <div id ="banner">
             <div>
                 <img src="<%=teacher.getAvatar()%>">
                 <h1><%=teacher.getName()%>(No.<%=teacher.getTno()%>)</h1>
-                <a href="teacher_update.jsp">
+                <a href="../teacher/teacher_update.jsp">
                     修改信息
                 </a>
             </div>
         </div>
     </header>
     <!-- Content -->
-    <div id="yq_content">
+    <div id="content">
         <div id="yq_inner">
             <%
                 for(int i = 1 ;i <= 4 ;i ++){
-                    String div_id = "yq_frg" + i;
+                    String div_id = "frg" + i;
                     String a_id = "f_title" + i;
                     String p_id = "f_des" + i;
                     if(i-1 < classes.getList().size()){
@@ -48,7 +48,7 @@
                         String time = format.format(date);
             %>
             <div id=<%=div_id%>>
-                <a id=<%=a_id%> class="title" href="../../servlet/clz/ClassDetailServlet?clzno=<%=clz.getClzno()%>"><%=name%></a>
+                <a id=<%=a_id%> class="title" href="../../servlet/teacher/TeacherClassDetailServlet?clzno=<%=clz.getClzno()%>"><%=name%></a>
                 <p id=<%=p_id%> class="des">开课时间：<%=time%></p>
             </div>
             <%

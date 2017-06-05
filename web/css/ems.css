@@ -68,18 +68,18 @@ nav{
 	}
 
 /* Banner */
-#yq_banner{
+#banner{
 	height: 650px;
 	background-color: rgba(0 , 0 , 0 , 0.2);
 }
-	#yq_banner div{
+	#banner div{
 		position: relative;
 		top: 150px;
 		max-width: 400px;
 		margin: 0 auto;
 		text-align: center;
 	}
-	#yq_banner #yq_time1{
+	#banner #time1{
 		text-align: center;
 		color: white;
 		position: relative;
@@ -87,7 +87,7 @@ nav{
 		font-weight: 900;
 		letter-spacing: 2px;
 	}
-	#yq_banner #yq_time2{
+	#banner #time2{
 		margin-top: 20px;
 		text-align: center;
 		color: white;
@@ -96,26 +96,26 @@ nav{
 		font-weight: 900;
 		letter-spacing: 2px;
 	}
-	#yq_banner h1{
+	#banner h1{
 		margin: 0;
 		color: white;
 		align-items: center;
 		text-align: center;
 	}
-	#yq_banner p{
+	#banner p{
 		margin-top: 60px;
 		color: white;
 		text-align: center;
 		line-height: 30px;
 	}
-	#yq_banner a{
+	#banner a{
 		margin-top: 60px;
 		color: white;
 		text-align: center;
 		display: block;
 		line-height: 30px;
 	}
-	#yq_banner hr{
+	#banner hr{
 		width: 200px;
 		margin: 0 auto;
 		position: relative;
@@ -123,7 +123,7 @@ nav{
 		background-color: white;
 		height: 1px;
 	}
-	#yq_banner img{
+	#banner img{
 		width:150px;
 		height:150px;
 		border-radius:75px;
@@ -131,12 +131,12 @@ nav{
 
 
 /* Content */
-#yq_content{
+#content{
 	height: 1000px;
 	text-align: center;
 	margin: 0 auto;
 }
-	#yq_content .title{
+	#content .title{
 		position: relative;
 		text-decoration: none;
 		top: 50px;
@@ -145,65 +145,65 @@ nav{
 		font-weight: 900;
 		font-size: 40px;
 	}
-	#yq_content .des{
+	#content .des{
 		position: relative;
 		top: 80px;
 		margin: 0;
 		color: white;
 		font-size: 16px;
 	}
-	#yq_content #yq_frg1{
+	#content #frg1{
 		margin: 0;
 		height: 250px;
 		background-color: #1D6B8D;
 		transition: all .5s ease;
 	}
-	#yq_content #yq_frg1:hover{
+	#content #frg1:hover{
 		background-color: orange;
 	}
-	#yq_content #yq_frg1 #f_img1{
+	#content #frg1 #f_img1{
 		float: left;
 		width: 400px;
 		height: 100%;
 	}
-	#yq_content #yq_frg2{
+	#content #frg2{
 		margin: 0;
 		height: 250px;
 		background-color: #0B597B;
 		transition: all .5s ease-in;
 	}
-	#yq_content #yq_frg2:hover{
+	#content #frg2:hover{
 		background-color: orange;
 	}
-	#yq_content #yq_frg2 #f_img2{
+	#content #frg2 #f_img2{
 		float: right;
 		width: 400px;
 		height: 100%;
 	}
-	#yq_content #yq_frg3{
+	#content #frg3{
 		margin: 0;
 		height: 250px;
 		background-color: #024D6F;
 		transition: all .5s ease-in;
 	}
-	#yq_content #yq_frg3:hover{
+	#content #frg3:hover{
 		background-color: orange;
 	}
-	#yq_content #yq_frg3 #f_img3{
+	#content #frg3 #f_img3{
 		float: left;
 		width: 400px;
 		height: 100%;
 	}
-	#yq_content #yq_frg4{
+	#content #frg4{
 		margin: 0;
 		height: 250px;
 		background-color: #023D59;
 		transition: all .5s ease-in;
 	}
-	#yq_content #yq_frg4:hover{
+	#content #frg4:hover{
 		background-color: orange;
 	}
-	#yq_content #yq_frg4 #f_img4{
+	#content #frg4 #f_img4{
 		float: right;
 		width: 400px;
 		height: 100%;

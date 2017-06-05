@@ -1,7 +1,8 @@
 package servlet;
 
 import bean.admin.Admin;
-import bean.sc.Sc;
+import bean.sc.Choose;
+import bean.sc.SC;
 import bean.stu.Student;
 import bean.teacher.Teacher;
 import dao.AdminDao;
@@ -30,25 +31,22 @@ public class LoginServlet extends HttpServlet {
 
         switch (type){
             case "student":
-                /*Student student = StudentDao.login(no, password);
+                Student student = StudentDao.login(no, password);
                 if(student != null){
                     request.getSession().setAttribute("student", student);
-
-                    Sc sc = SCDao.queryThisTerm(student.getSno());
-                    ScWrapper wrapper = new ScWrapper();
-                    wrapper.setSc(sc);
-                    if(sc == null){
-                        wrapper.setNull(true);
-                        request.getSession().setAttribute("sc", wrapper);
-                        response.sendRedirect("StudentMainServlet?page=1");
+                    Choose choose = new Choose();
+                    if(!SCDao.queryThisTerm(student.getSno())){ // 本学期是否已选课
+                        choose.setChoose(false);
+                        request.getSession().setAttribute("choose", choose);
+                        response.sendRedirect("stu/StudentMainServlet?page=1");
                     }else{
-                        wrapper.setNull(false);
-                        request.getSession().setAttribute("sc", wrapper);
-                        response.sendRedirect("SelfMainServlet?page=1");
+                        choose.setChoose(true);
+                        request.getSession().setAttribute("choose", choose);
+                        response.sendRedirect("stu/StudentInfoServlet?page=1");
                     }
                 }else{
                     response.sendRedirect("../jsp/view/login_fail.jsp"); // 登录失败
-                }*/
+                }
                 break;
             case "teacher":
                 Teacher teacher = TeacherDao.login(no, password); // 教师个人信息

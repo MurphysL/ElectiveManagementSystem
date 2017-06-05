@@ -3,7 +3,7 @@ package bean.sc;
 /**
  * 详细Sc类
  */
-public class DetailSc {
+public class DetailSC {
     private int clzno;
     private long start;
     private String address;
@@ -151,7 +151,7 @@ public class DetailSc {
 
     @Override
     public String toString() {
-        return "DetailSc{" +
+        return "DetailSC{" +
                 "clzno=" + clzno +
                 ", start=" + start +
                 ", address='" + address + '\'' +

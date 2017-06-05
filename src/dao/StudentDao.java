@@ -91,7 +91,7 @@ public class StudentDao {
     }
 
     /**
-     *
+     * 通过学号查找学生
      * @param sno
      * @return
      */
@@ -103,14 +103,14 @@ public class StudentDao {
             ps.setInt(1, sno);
             ResultSet rs = ps.executeQuery();
 
-            if(rs != null){
+            while (rs.next()){
                 student = new Student();
-                student.setSno(sno);
-                while (rs.next()){
-                    student.setName(rs.getString(2));
-                    student.setSex(rs.getString(3));
-                    student.setDept(rs.getString(4));
-                }
+                student.setSno(rs.getInt(1));
+                student.setName(rs.getString(2));
+                student.setSex(rs.getString(3));
+                student.setDept(rs.getString(4));
+                student.setPassword(rs.getString(5));
+                student.setAvatar(rs.getString(6));
             }
         } catch (SQLException e) {
             e.printStackTrace();

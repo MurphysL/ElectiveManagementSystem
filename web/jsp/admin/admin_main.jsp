@@ -20,26 +20,26 @@
                 <a href="#" >NUC选修管理系统</a>
             </div>
         </nav>
-        <div id ="yq_banner">
+        <div id ="banner">
             <div>
-                <h1 id="yq_time1">00 : 00 : 00</h1>
-                <h1 id="yq_time2">2017年1月1日星期一</h1>
+                <h1 id="time1">00 : 00 : 00</h1>
+                <h1 id="time2">2017年1月1日星期一</h1>
             </div>
         </div>
     </header>
     <!-- Content -->
-    <div id="yq_content">
+    <div id="content">
         <div id="yq_inner">
-            <div id="yq_frg1">
+            <div id="frg1">
                 <a id="f_title1" class="title" href="../../servlet/admin/TeacherManageServlet?page=1">教师管理</a>
             </div>
-            <div id="yq_frg2">
+            <div id="frg2">
                 <a id="f_title2" class="title" href="../../servlet/admin/StudentManageServlet?page=1">学生管理</a>
             </div>
-            <div id="yq_frg3">
+            <div id="frg3">
                 <a id="f_title3" class="title" href="../../servlet/admin/ClassManageServlet?page=1">课程管理</a>
             </div>
-            <div id="yq_frg4">
+            <div id="frg4">
 
             </div>
         </div>

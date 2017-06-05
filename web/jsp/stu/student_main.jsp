@@ -1,8 +1,9 @@
 
 <%@ page import="bean.clz.DetailClass" %>
+<%@ page import="bean.stu.Student" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="classes" class="bean.clz.DetailClassList" scope="session"/>
-<jsp:useBean id="sc" class="bean.sc.ScWrapper" scope="session"/>
+<jsp:useBean id="choose" class="bean.sc.Choose" scope="session"/>
 <html>
 <head>
     <meta charset="utf-8">
@@ -17,14 +18,23 @@
 <div id="main_bg">
     <!-- Header -->
     <header>
-        <%@include file="../widght/nav_login.jsp" %>
-        <div id ="yq_banner">
+        <nav>
+            <div id="logo">
+                <a href="../../servlet/stu/StudentMainServlet?page=1" >NUC选修管理系统</a>
+            </div>
+            <div id="avatar">
+                <a href="../../servlet/stu/StudentInfoServlet?page=1">
+                    <img src=<%=((Student)request.getSession().getAttribute("student")).getAvatar()%>>
+                </a>
+            </div>
+        </nav>
+        <div id ="banner">
             <div>
-                <h1 id="yq_time1">00 : 00 : 00</h1>
-                <h1 id="yq_time2">2017年1月1日星期一</h1>
+                <h1 id="time1">00 : 00 : 00</h1>
+                <h1 id="time2">2017年1月1日星期一</h1>
                 <hr>
                 <%
-                    if(sc.isNull()){
+                    if(!choose.isChoose()){
                 %>
                         <p>本学期未选课</p>
                 <%
@@ -39,23 +49,21 @@
         </div>
     </header>
     <!-- Content -->
-    <div id="yq_content">
+    <div id="content">
         <div id="yq_inner">
             <%
                 for(int i = 1 ;i <= 4 ;i ++){
-                    String div_id = "yq_frg" + i;
-                    String img_id = "f_img" + i;
+                    String div_id = "frg" + i;
                     String a_id = "f_title" + i;
                     String p_id = "f_des" + i;
                     if(i-1 < classes.getList().size()){
                         DetailClass clz = classes.getList().get(i-1);
                         String cname = clz.getCname();
-                        String teacher = clz.getTname();
+                        String tname = clz.getTname();
             %>
                         <div id=<%=div_id%>>
-                            <img src="../../img/pic1.jpg" id=<%=img_id%>>
-                            <a id=<%=a_id%> class="title" href="../../servlet/ClassDetailServlet?cno=<%=clz.getCno()%>&tno=<%=clz.getTno()%>"><%=cname%></a>
-                            <p id=<%=p_id%> class="des"><%=teacher%></p>
+                            <a id=<%=a_id%> class="title" href="../../servlet/clz/StudentClassDetailServlet?clzno=<%=clz.getClzno()%>"><%=cname%></a>
+                            <p id=<%=p_id%> class="des"><%=tname%></p>
                         </div>
             <%
                     }else{

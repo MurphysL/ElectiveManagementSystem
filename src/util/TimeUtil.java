@@ -10,6 +10,8 @@ import java.util.Date;
  */
 public class TimeUtil {
 
+    public static final long A_WEEK = 604800L;
+
     private static final String TERM_BEGIN_END_1 = "-01-01 01:00";
     private static final String TERM_END_END_1 = "-06-30 23:59";
     private static final String TERM_BEGIN_END_2 = "-07-01 01:00";
