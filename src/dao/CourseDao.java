@@ -1,8 +1,7 @@
 package dao;
 
 import bean.course.Course;
-import bean.course.Courses;
-import config.Config;
+import bean.course.CourseList;
 import util.ConnUtil;
 
 import java.sql.PreparedStatement;
@@ -14,118 +13,115 @@ import java.util.List;
 /**
  * 科目查询类
  */
-@Deprecated
 public class CourseDao {
 
     /**
-     * 查询已先科目
-     * @param sno 学号
-     * @return 课程包装类
+     * 查询全部科目
+     * @return 科目列表
      */
-    /*public static Courses quertSeletedCourses(int sno){
-        Courses courses = new Courses();
+    public static CourseList queryCourse(){
+        CourseList courseList = new CourseList();
         List<Course> list = new ArrayList<>();
-        int num = 0;
-        String sql = "SELECT * FROM course , sc WHERE course.Cno = sc.Cno AND Sno = ? ";
+        String sql = "SELECT * FROM course";
         try {
             PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
-            ps.setInt(1, sno);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 Course course = new Course();
                 course.setCno(rs.getInt(1));
-                course.setCcredit(rs.getInt(3));
-                course.setCname(rs.getString(2));
+                course.setName(rs.getString(2));
+                course.setCredit(rs.getInt(3));
+                course.setDuration(rs.getInt(4));
                 list.add(course);
-                num ++;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        courses.setNum(num);
-        courses.setCourses(list);
-        return courses;
-    }*/
-
-    /*public static Courses quertSeletedPagingCourses(int sno, int page){
-        Courses courses = new Courses();
-        List<Course> list = new ArrayList<>();
-        int num = 0;
-
-        int start = (page-1)* Config.PAGE_BLOG_NUM;
-        int end = start+4;
-        String sql = "SELECT * FROM course , sc WHERE course.Cno = sc.Cno AND Sno = ? LIMIT ?, ?";
-        String sql2 = "SELECT count(*) FROM course , sc WHERE course.Cno = sc.Cno AND Sno = ?";
-        try {
-            PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
-            ps.setInt(1, sno);
-            ps.setInt(2, start);
-            ps.setInt(3, end);
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                Course course = new Course();
-                course.setCcredit(rs.getInt(3));
-                course.setCno(rs.getInt(1));
-                course.setCname(rs.getString(2));
-                list.add(course);
-            }
-
-            PreparedStatement ps2 = ConnUtil.getConn().prepareStatement(sql2);
-            ps2.setInt(1, sno);
-            ResultSet rs2 = ps2.executeQuery();
-            while(rs2.next()){
-                num = rs2.getInt(1);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        courses.setNum(num);
-        courses.setCourses(list);
-        return courses;
-    }*/
+        courseList.setList(list);
+        return courseList;
+    }
 
     /**
-     * 查询学生目前可选科目（分页)
-     * @param sno 学生学号
-     * @param page 页数
-     * @return 科目包装类
+     * 查询科目总数
+     * @return 科目总数
      */
-    /*public static Courses queryPagingCourses(int sno, int page){
-        Courses courses = new Courses();
-        int num = 0;
-        List<Course> list = new ArrayList<>();
-        int start = (page-1)* Config.PAGE_BLOG_NUM;
-        int end = start+4;
-        String sql = "SELECT * FROM course WHERE Cno NOT IN (SELECT Cno FROM sc WHERE Sno= ?) LIMIT ?, ?";
-        String sql2 = "SELECT count(*) FROM course WHERE Cno NOT IN (SELECT Cno FROM sc WHERE Sno= ?)";
+    public static int queryCourseCount(){
+        int count = 0;
+        String sql = "SELECT count(*) FROM course";
         try {
             PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
-            ps.setInt(1, sno);
-            ps.setInt(2, start);
-            ps.setInt(3, end);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                Course course = new Course();
-                course.setCno(rs.getInt(1));
-                course.setCname(rs.getString(2));
-                course.setCcredit(rs.getInt(3));
-                list.add(course);
-            }
-
-            PreparedStatement ps2 = ConnUtil.getConn().prepareStatement(sql2);
-            ps2.setInt(1, sno);
-
-            ResultSet rs2 = ps2.executeQuery();
-            while(rs2.next()){
-                num = rs2.getInt(1);
-            }
-
+            if(rs.next())
+                count = rs.getInt(1);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        courses.setCourses(list);
-        courses.setNum(num);
+        return count;
+    }
 
-        return courses;
-    }*/
+    /**
+     * 插入科目
+     * @param name 科目名
+     * @param credit 学分
+     * @param duration 持续周长
+     * @return 是否添加成功
+     */
+    public static boolean insertCourse(String name, int credit, int duration){
+        String sql = "INSERT INTO course(name, credit, duration) VALUES(?, ?, ?)";
+        try {
+            PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
+            ps.setString(1, name);
+            ps.setInt(2, credit);
+            ps.setInt(3, duration);
+            if(ps.executeUpdate() > 0)
+                return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
+     * 更新科目
+     * @param cno 科目号
+     * @param name 科目名
+     * @param credit 学分
+     * @param duration 周数
+     * @return 是否更新成功
+     */
+    public static boolean updateCourse(int cno, String name, int credit, int duration){
+        String sql = "UPDATE course SET name=?, credit=?, duration=? WHERE cno=?";
+        try {
+            PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
+            ps.setString(1, name);
+            ps.setInt(2, credit);
+            ps.setInt(3, duration);
+            ps.setInt(4, cno);
+            if(ps.executeUpdate() > 0)
+                return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
+     * 删除科目
+     * @param cno 科目号
+     * @return 是否删除成功
+     */
+    public static boolean deleteCourse(int cno){
+        String sql = "DELETE FROM course WHERE cno = ?";
+        try {
+            PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
+            ps.setInt(1, cno);
+            if(ps.executeUpdate() > 0)
+                return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
 }

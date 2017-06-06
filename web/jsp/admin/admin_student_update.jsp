@@ -1,6 +1,5 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="update_teacher" class="bean.teacher.Teacher"/>
+
 <html>
 <head>
     <title>学生信息修改</title>

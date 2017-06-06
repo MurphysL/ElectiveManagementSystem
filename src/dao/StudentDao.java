@@ -132,10 +132,8 @@ public class StudentDao {
     public static StudentList queryPagingStudent(int page){
         StudentList students = new StudentList();
         List<Student> list = new ArrayList<>();
-        int sum = 0;
 
         String sql = "SELECT * FROM student LIMIT ?, ?";
-        String sql2 = "SELECT count(*) FROM student";
         int start = (page-1)* Config.ADMIN_PAGE_NUM;
         int num = Config.ADMIN_PAGE_NUM;
         try {
@@ -153,15 +151,11 @@ public class StudentDao {
                 student.setAvatar(rs.getString(6));
                 list.add(student);
             }
-
-            PreparedStatement ps2 = ConnUtil.getConn().prepareStatement(sql2);
-            sum = ps2.executeQuery().getInt(1);
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         students.setList(list);
-       /* students.setNum(sum);*/
         return students;
     }
 

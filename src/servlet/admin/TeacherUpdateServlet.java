@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by lenovo on 2017/6/4.
+ * 教师信息更新
  */
 @WebServlet(name = "TeacherUpdateServlet", value = "/servlet/admin/TeacherUpdateServlet")
 public class TeacherUpdateServlet extends HttpServlet {

@@ -1,6 +1,6 @@
 package servlet.admin;
 
-import dao.StudentDao;
+import dao.ClassDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,20 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 添加学生信息
+ * 添加课程
  */
-@WebServlet(name = "StudentInsertServlet", value = "/servlet/admin/StudentInsertServlet")
-public class StudentInsertServlet extends HttpServlet {
+@WebServlet(name = "ClassInsertServlet", value = "/servlet/admin/ClassInsertServlet")
+public class ClassInsertServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
-        int sno = Integer.parseInt(request.getParameter("sno"));
-        String name = request.getParameter("name");
-        String sex = request.getParameter("sex");
-        String dept = request.getParameter("dept");
-        String password = request.getParameter("password");
-
-        if(StudentDao.insertStudent(sno, name, sex, dept, password)){
-            response.sendRedirect("StudentManageServlet?page=1");
+        int cno = Integer.parseInt(request.getParameter("cno"));
+        int tno = Integer.parseInt(request.getParameter("tno"));
+        String start = request.getParameter("start");
+        String address = request.getParameter("address");
+        if(ClassDao.insertClz(cno, tno, start, address)){
+            response.sendRedirect("ClassManageServlet?page=1");
         }else{
             response.sendRedirect("../../jsp/admin/insert_fail.jsp");
         }

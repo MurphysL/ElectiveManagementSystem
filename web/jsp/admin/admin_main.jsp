@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="admin" class="bean.admin.Admin" scope="session"/>
 <html>
@@ -40,7 +39,7 @@
                 <a id="f_title3" class="title" href="../../servlet/admin/ClassManageServlet?page=1">课程管理</a>
             </div>
             <div id="frg4">
-
+                <a id="f_title4" class="title" href="../../servlet/admin/CourseManageServlet?page=1">课目管理</a>
             </div>
         </div>
     </div>

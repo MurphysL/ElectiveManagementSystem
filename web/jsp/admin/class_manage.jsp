@@ -1,11 +1,12 @@
 <%@ page import="bean.clz.DetailClass" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="classes" class="bean.clz.DetailClassList" scope="session"/>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>NUC选修管理系统</title>
+    <title>课程信息管理</title>
     <link rel="icon" href="../../img/logo.png" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="../../css/ems.css">
     <link rel="stylesheet" type="text/css" href="../../css/normalize.css">
@@ -18,6 +19,9 @@
     <nav>
         <div id="logo">
             <a href="admin_main.jsp" >中北大学选修管理系统</a>
+        </div>
+        <div id="new">
+            <a href="class_insert.jsp"><img src="../../img/cancel.png"></a>
         </div>
     </nav>
 </div>
@@ -44,13 +48,15 @@
                     List<DetailClass> list = classes.getList();
                     for(int i = 0 ;i < 10 ;i ++){
                         if(i < list.size()){
+                            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                            String time = format.format(list.get(i).getStart());
                 %>
                 <tr>
                     <td align="center"><%=list.get(i).getCno()%></td>
                     <td align="center"><%=list.get(i).getCname()%></td>
                     <td align="center"><%=list.get(i).getCredit()%></td>
                     <td align="center"><%=list.get(i).getAddress()%></td>
-                    <td align="center"><%=list.get(i).getStart()%></td>
+                    <td align="center"><%=time%></td>
                     <td align="center"><%=list.get(i).getDuration()%></td>
                     <td align="center"><%=list.get(i).getTno()%></td>
                     <td align="center"><%=list.get(i).getTname()%></td>

@@ -14,7 +14,7 @@
     <header>
         <nav>
             <div id="logo">
-                <a href="teacher_manage.jsp" >返回上一级</a>
+                <a href="class_manage.jsp" >返回上一级</a>
             </div>
         </nav>
         <div id ="banner"></div>
@@ -24,10 +24,11 @@
 <div id="update">
     <div id="login_info">
         <img class="cancel" src="../../img/cancel.png" onclick="update_back()">
-        <form name="form" method="post" action="/servlet/admin/TeacherInsertServlet">
-            <input class="form_input" type="text" name="name" placeholder="姓  名">
-            <input class="form_input" type="text" name="sex" placeholder="性  别">
-            <input class="form_input" type="text" name="password" placeholder="密  码">
+        <form name="form" method="post" action="/servlet/admin/ClassInsertServlet">
+            <input class="form_input" type="text" name="cno" placeholder="课程号">
+            <input class="form_input" type="text" name="tno" placeholder="教师号">
+            <input class="form_input" type="text" name="start" placeholder="开始时间（1980-1-1 12:12)">
+            <input class="form_input" type="text" name="address" placeholder="地  址">
             <input class = "form_bt"  type="submit" value="确认">
             <input class = "form_bt"  type="reset" value="重置">
         </form>
@@ -36,3 +37,4 @@
 
 </body>
 </html>
+
