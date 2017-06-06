@@ -13,3 +13,6 @@
 - [X] 学生信息管理
 - [X] 课程信息管理
 - [X] 教师信息管理
+
+### LICENSE
+[LICENSE](LICENSE)
