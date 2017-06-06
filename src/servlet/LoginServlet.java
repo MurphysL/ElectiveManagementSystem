@@ -2,7 +2,6 @@ package servlet;
 
 import bean.admin.Admin;
 import bean.sc.Choose;
-import bean.sc.SC;
 import bean.stu.Student;
 import bean.teacher.Teacher;
 import dao.AdminDao;
@@ -34,29 +33,27 @@ public class LoginServlet extends HttpServlet {
                 Student student = StudentDao.login(no, password);
                 if(student != null){
                     request.getSession().setAttribute("student", student);
-                    Choose choose = new Choose();
+                    Choose choose = new Choose(); // 本学期是否已选课标识
                     if(!SCDao.queryThisTerm(student.getSno())){ // 本学期是否已选课
                         choose.setChoose(false);
                         request.getSession().setAttribute("choose", choose);
-                        response.sendRedirect("stu/StudentMainServlet?page=1");
+                        response.sendRedirect("stu/StudentMainServlet?page=1"); // 学生选课界面
                     }else{
                         choose.setChoose(true);
                         request.getSession().setAttribute("choose", choose);
-                        response.sendRedirect("stu/StudentInfoServlet?page=1");
+                        response.sendRedirect("stu/StudentInfoServlet?page=1"); // 学生信息界面
                     }
                 }else{
-                    response.sendRedirect("../jsp/view/login_fail.jsp"); // 登录失败
+                    response.sendRedirect("../jsp/login_fail.jsp"); // 登录失败
                 }
                 break;
             case "teacher":
                 Teacher teacher = TeacherDao.login(no, password); // 教师个人信息
                 if(teacher != null){
-                    System.out.println(teacher.toString());
-
                     request.getSession().setAttribute("teacher", teacher);
                     response.sendRedirect("teacher/TeacherInfoServlet?page=1");
                 }else{
-                    response.sendRedirect("../jsp/view/login_fail.jsp"); // 登录失败
+                    response.sendRedirect("../jsp/login_fail.jsp"); // 登录失败
                 }
                 break;
             case "admin":
@@ -65,11 +62,11 @@ public class LoginServlet extends HttpServlet {
                     request.getSession().setAttribute("admin", admin);
                     request.getRequestDispatcher("../jsp/admin/admin_main.jsp").forward(request, response);
                 }else{
-                    response.sendRedirect("../jsp/view/login_fail.jsp"); // 登录失败
+                    response.sendRedirect("../jsp/login_fail.jsp"); // 登录失败
                 }
                 break;
             default:
-                response.sendRedirect("../jsp/view/login_fail.jsp"); // 登录失败
+                response.sendRedirect("../jsp/login_fail.jsp"); // 登录失败
                 break;
         }
     }

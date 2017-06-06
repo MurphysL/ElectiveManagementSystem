@@ -20,15 +20,14 @@ public class SelectClassServlet extends HttpServlet {
         int sno = Integer.parseInt(request.getParameter("sno"));
 
         if(SCDao.insertClass(clzno, sno)){
-            Choose choose = new Choose();
+            Choose choose = new Choose(); /* 更新选课标识 */
             choose.setChoose(true);
             request.getSession().setAttribute("choose", choose);
-            response.sendRedirect("../../jsp/view/update_success.jsp");
+            response.sendRedirect("../../jsp/stu/update_success.jsp");
         }else{
             //选课失败
-            response.sendRedirect("../../jsp/stu/delete_fail.jsp");
+            response.sendRedirect("../../jsp/stu/update_fail.jsp");
         }
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

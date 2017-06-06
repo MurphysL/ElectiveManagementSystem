@@ -17,7 +17,7 @@
 <div id="main_bg">
     <nav>
         <div id="logo">
-            <a href="#" >NUC选修管理系统</a>
+            <a href="admin_main.jsp" >中北大学选修管理系统</a>
         </div>
     </nav>
 </div>
@@ -42,7 +42,8 @@
                 </tr>
                 <%
                     List<DetailClass> list = classes.getList();
-                    for(int i = 0 ;i < list.size() ;i ++){
+                    for(int i = 0 ;i < 10 ;i ++){
+                        if(i < list.size()){
                 %>
                 <tr>
                     <td align="center"><%=list.get(i).getCno()%></td>
@@ -62,6 +63,23 @@
                     </td>
                 </tr>
                 <%
+                    }else{
+                %>
+                <tr>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                </tr>
+                <%
+                    }
                     }
                 %>
             </table>

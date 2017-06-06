@@ -21,31 +21,32 @@ public class TeacherInfoServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         int page = Integer.parseInt(request.getParameter("page"));
         int tno = ((Teacher)request.getSession().getAttribute("teacher")).getTno();
-        DetailClassList classes = DetailClassDao.queryPagingClass4Teacher(tno, page);
+        DetailClassList classes = DetailClassDao.queryPagingClass4Teacher(tno, page); /* 查询教授过的课程 */
 
-        int num = DetailClassDao.getClzCount4Teacher(tno);
+        int num = DetailClassDao.getClzCount4Teacher(tno); /* 查询教授过的课程数目 */
 
-        int pages;//总页数
+        int pages;// 总页数
         StringBuilder sb = new StringBuilder();
         if(num % Config.PAGE_BLOG_NUM == 0){
             pages = num / Config.PAGE_BLOG_NUM;
         }else{
             pages = num / Config.PAGE_BLOG_NUM + 1;
         }
+        /* 拼接导航栏 */
         for(int i = 1 ;i <= pages ;i ++){
-            if(i == page){
+            if(i == page){ /* 当前页面 */
                 sb.append("<a href=../../servlet/teacher/TeacherInfoServlet?page=")
                         .append(i)
                         .append(" id=\"select\" style=\"")
-                        .append(Config.CSS_SELECT)
+                        .append(Config.CSS_SELECT) /* CSS 样式 */
                         .append("\">")
                         .append(i)
                         .append("</a>");
-            }else{
+            }else{ /* 其他页面 */
                 sb.append("<a href=../../servlet/teacher/TeacherInfoServlet?page=")
                         .append(i)
                         .append(" id=\"select\" style=\"")
-                        .append(Config.CSS_UNSELECT)
+                        .append(Config.CSS_UNSELECT) /* CSS 样式 */
                         .append("\">")
                         .append(i)
                         .append("</a>");

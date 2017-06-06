@@ -16,9 +16,13 @@
 <div id="main_bg">
     <nav>
         <div id="logo">
-            <a href="#" >NUC选修管理系统</a>
+            <a href="admin_main.jsp" >中北大学选修管理系统</a>
+        </div>
+        <div id="new">
+            <a href="student_insert.jsp"><img src="../../img/cancel.png"></a>
         </div>
     </nav>
+
 </div>
 
 <!-- Main -->
@@ -27,7 +31,7 @@
         <header>
             <table  align="center" border="2" width="1000px" height="50px">
                 <tr>
-                    <td align="center">教工号</td>
+                    <td align="center">学  号</td>
                     <td align="center">姓  名</td>
                     <td align="center">性  别</td>
                     <td align="center">院  系</td>
@@ -37,7 +41,8 @@
                 </tr>
                 <%
                     List<Student> list = students.getList();
-                    for(int i = 0 ;i < list.size() ;i ++){
+                    for(int i = 0 ;i < 10 ;i ++){
+                        if(i < list.size()){
                 %>
                 <tr>
                     <td align="center"><%=list.get(i).getSno()%></td>
@@ -53,6 +58,18 @@
                     </td>
                 </tr>
                 <%
+                    }else{
+                %>
+                <tr>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                </tr>
+                <%
+                        }
                     }
                 %>
             </table>

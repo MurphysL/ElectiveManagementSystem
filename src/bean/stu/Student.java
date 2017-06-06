@@ -8,7 +8,7 @@ public class Student {
     private String sex;
     private String dept;
     private String password;
-    private String avatar;
+    private String avatar; /* 头像 */
 
     public int getSno() {
         return sno;

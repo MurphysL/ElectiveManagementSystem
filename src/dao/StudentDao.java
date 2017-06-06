@@ -2,7 +2,6 @@ package dao;
 
 import bean.stu.Student;
 import bean.stu.StudentList;
-import com.sun.istack.internal.NotNull;
 import config.Config;
 import util.ConnUtil;
 
@@ -11,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * 学生查询类
@@ -66,28 +66,33 @@ public class StudentDao {
     }
 
     /**
-     * 插入学生信息
-     * @param student 学生实体
-     * @return 学生实体
+     * 添加学生信息
+     * @param sno 学号
+     * @param name 姓名
+     * @param sex 性别
+     * @param dept 院系
+     * @param password 密码
+     * @return 是否添加成功
      */
-    public static Student insertStudent(@NotNull Student student){
-        Student stu = null;
-        String sql = "INSERT student VALUES(?, ?, ?, ?, ?, ?)";
+    public static boolean insertStudent(int sno, String name, String sex, String dept, String password){
+        String sql = "INSERT INTO student VALUES(?, ?, ?, ?, ?, ?)";
+        Random random = new Random();
+        String avatar = String.format("http://images.nowcoder.com/head/%dt.png", random.nextInt(1000)); // 头像
         try {
             PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
-            ps.setInt(1, student.getSno());
-            ps.setString(2, student.getName());
-            ps.setString(3, student.getSex());
-            ps.setString(4, student.getDept());
-            ps.setString(5, student.getPassword());
-            ps.setString(6, student.getAvatar());
+            ps.setInt(1, sno);
+            ps.setString(2, name);
+            ps.setString(3, sex);
+            ps.setString(4, dept);
+            ps.setString(5, password);
+            ps.setString(6, avatar);
             if(ps.executeUpdate() > 0){
-                stu = student;
+                return true;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return stu;
+        return false;
     }
 
     /**

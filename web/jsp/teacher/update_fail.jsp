@@ -1,7 +1,6 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-
 <head>
     <title>更新失败</title>
     <meta charset="utf-8" />
@@ -26,7 +25,7 @@
 </div>
 
 <%
-    response.setHeader("refresh","2;URL=admin_main.jsp");
+    response.setHeader("refresh","2;URL=../../servlet/stu/TeacherClassDetailServlet?page=1");
 %>
 
 <!-- Footer -->

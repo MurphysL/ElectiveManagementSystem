@@ -43,9 +43,8 @@ public class SCDao {
      * @return 更改条数
      */
     public static boolean insertClass(int clzno, int sno){
-        if(queryThisTerm(sno)){ // 已选课程
-            if(deleteClass(sno)){ // 删除课程
-                System.out.println("删除成功");
+        if(queryThisTerm(sno)){ // 本学期已选课程
+            if(deleteClass(sno)){ // 删除已选课程
                 String sql = "INSERT sc(clzno, sno) VALUES (?, ?)";
                 try {
                     PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
@@ -56,6 +55,17 @@ public class SCDao {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
+            }
+        }else{// 本学期未选课程
+            String sql = "INSERT sc(clzno, sno) VALUES (?, ?)";
+            try {
+                PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
+                ps.setInt(1, clzno);
+                ps.setInt(2, sno);
+                if(ps.executeUpdate() > 0)
+                    return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
         return false;
@@ -88,6 +98,28 @@ public class SCDao {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        }
+        return false;
+    }
+
+    /**
+     * 更新选课成绩
+     * @param clzno 课程号
+     * @param sno 学号
+     * @param grade 成绩
+     * @return 是否更新成功
+     */
+    public static boolean updateGrade(int clzno, int sno, int grade){
+        String sql  = "UPDATE sc SET grade = ? WHERE clzno = ? AND sno = ?";
+        try {
+            PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
+            ps.setInt(1, grade);
+            ps.setInt(2, clzno);
+            ps.setInt(3, sno);
+            if(ps.executeUpdate() > 0)
+                return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return false;
     }

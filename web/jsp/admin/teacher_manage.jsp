@@ -16,7 +16,10 @@
 <div id="main_bg">
     <nav>
         <div id="logo">
-            <a href="../../servlet/admin/TeacherManageServlet?page=1" >NUC选修管理系统</a>
+            <a href="admin_main.jsp" >中北大学选修管理系统</a>
+        </div>
+        <div id="new">
+            <a href="teacher_insert.jsp"><img src="../../img/cancel.png"></a>
         </div>
     </nav>
 </div>
@@ -25,7 +28,7 @@
 <section id="main">
     <div class="inner">
         <header>
-            <table  align="center" border="2" width="1000px" height="50px">
+            <table  align="center" border="2" width="1000px">
                 <tr>
                     <td align="center">教工号</td>
                     <td align="center">姓  名</td>
@@ -36,7 +39,8 @@
                 </tr>
                 <%
                     List<Teacher> teacher = teachers.getList();
-                    for(int i = 0 ;i < teacher.size() ;i ++){
+                    for(int i = 0 ;i < 10 ;i ++){
+                        if(i < teacher.size()){
                 %>
                 <tr>
                     <td align="center"><%=teacher.get(i).getTno()%></td>
@@ -51,6 +55,18 @@
                     </td>
                 </tr>
                 <%
+                        }else{
+                %>
+                <tr>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                    <td align="center" height="25px"></td>
+                </tr>
+                <%
+                        }
                     }
                 %>
             </table>

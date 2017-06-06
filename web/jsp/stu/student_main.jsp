@@ -1,9 +1,8 @@
-
 <%@ page import="bean.clz.DetailClass" %>
 <%@ page import="bean.stu.Student" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="classes" class="bean.clz.DetailClassList" scope="session"/>
-<jsp:useBean id="choose" class="bean.sc.Choose" scope="session"/>
+<jsp:useBean id="choose" class="bean.sc.Choose" scope="session"/> <%-- 是否选课标志 --%>
 <html>
 <head>
     <meta charset="utf-8">
@@ -20,7 +19,7 @@
     <header>
         <nav>
             <div id="logo">
-                <a href="../../servlet/stu/StudentMainServlet?page=1" >NUC选修管理系统</a>
+                <a href="../../servlet/stu/StudentMainServlet?page=1" >中北大学选修管理系统</a>
             </div>
             <div id="avatar">
                 <a href="../../servlet/stu/StudentInfoServlet?page=1">
@@ -51,11 +50,12 @@
     <!-- Content -->
     <div id="content">
         <div id="yq_inner">
+            <%-- 拼接课程信息 html --%>
             <%
                 for(int i = 1 ;i <= 4 ;i ++){
-                    String div_id = "frg" + i;
-                    String a_id = "f_title" + i;
-                    String p_id = "f_des" + i;
+                    String div_id = "frg" + i; /* 拼接 css */
+                    String a_id = "f_title" + i; /* 拼接 css */
+                    String p_id = "f_des" + i; /* 拼接 css */
                     if(i-1 < classes.getList().size()){
                         DetailClass clz = classes.getList().get(i-1);
                         String cname = clz.getCname();
@@ -76,7 +76,7 @@
         </div>
     </div>
     <!-- Bar -->
-    <%@include file="../widght/bar.jsp"%>
+    <%@include file="../widght/bar.jsp"%> <%-- 导航栏 --%>
 </div>
 
 </body>

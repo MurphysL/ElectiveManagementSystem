@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>NUC选修管理系统</title>
+    <title>管理员</title>
     <link rel="icon" href="../../img/logo.png" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="../../css/ems.css">
     <link rel="stylesheet" type="text/css" href="../../css/normalize.css">
@@ -17,7 +17,7 @@
     <header>
         <nav>
             <div id="logo">
-                <a href="#" >NUC选修管理系统</a>
+                <a href="#" >中北大学选修管理系统</a>
             </div>
         </nav>
         <div id ="banner">

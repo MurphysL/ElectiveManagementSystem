@@ -22,8 +22,10 @@ public class StudentMainServlet extends HttpServlet {
         Student student = (Student) request.getSession().getAttribute("student");
         int sno = student.getSno();
 
-        DetailClassList classes = DetailClassDao.queryPagingClass4Student(sno, page);
-        int num = DetailClassDao.getClass4StudentCount(sno);
+        DetailClassList classes = DetailClassDao.queryPagingClass4Student(sno, page); // 当前时间段可选课程
+        int num = DetailClassDao.getClass4StudentCount(sno); // 可选课程数
+
+        System.out.println(num);
 
         int pages;//总页数
         StringBuilder sb = new StringBuilder();
@@ -32,9 +34,10 @@ public class StudentMainServlet extends HttpServlet {
         }else{
             pages = num / Config.PAGE_BLOG_NUM + 1;
         }
+        // 拼接分页按钮
         for(int i = 1 ;i <= pages ;i ++){
             if(i == page){
-                sb.append("<a href=../../servlet/StudentMainServlet?page=")
+                sb.append("<a href=../../servlet/stu/StudentMainServlet?page=")
                         .append(i)
                         .append(" id=\"select\" style=\"")
                         .append(Config.CSS_SELECT)
@@ -42,7 +45,7 @@ public class StudentMainServlet extends HttpServlet {
                         .append(i)
                         .append("</a>");
             }else{
-                sb.append("<a href=../../servlet/StudentMainServlet?page=")
+                sb.append("<a href=../../servlet/stu/StudentMainServlet?page=")
                         .append(i)
                         .append(" id=\"select\" style=\"")
                         .append(Config.CSS_UNSELECT)
@@ -51,6 +54,7 @@ public class StudentMainServlet extends HttpServlet {
                         .append("</a>");
             }
         }
+        System.out.println(sb.toString());
         request.getSession().setAttribute("bar", sb.toString());
         request.getSession().setAttribute("classes", classes);
         response.sendRedirect("/jsp/stu/student_main.jsp");

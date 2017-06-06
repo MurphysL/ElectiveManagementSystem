@@ -24,11 +24,11 @@ public class TeacherUpdateInfoServlet extends HttpServlet {
         String avatar = request.getParameter("avatar");
 
         if(TeacherDao.updateTeacher(tno, tname, tsex, password, avatar)){
-            Teacher teacher = TeacherDao.query(tno);
+            Teacher teacher = TeacherDao.query(tno); /* 更新session中teacher的值*/
             request.getSession().setAttribute("teacher", teacher);
-            request.getRequestDispatcher("TeacherInfoServlet?page=1").forward(request, response);
+            request.getRequestDispatcher("../../jsp/teacher/update_success.jsp").forward(request, response);
         }else{
-            request.getRequestDispatcher("../jsp/view/update_fail.jsp").forward(request, response);
+            request.getRequestDispatcher("../../jsp/teacher/update_fail.jsp").forward(request, response);
         }
     }
 

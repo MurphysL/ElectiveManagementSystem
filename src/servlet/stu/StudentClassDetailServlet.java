@@ -21,10 +21,8 @@ public class StudentClassDetailServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         int clzno = Integer.parseInt(request.getParameter("clzno"));
 
-        DetailClass clz = DetailClassDao.queryDetailClass(clzno);
+        DetailClass clz = DetailClassDao.queryDetailClass(clzno); /* 课程详细 */
         request.getSession().setAttribute("clz", clz);
-        DetailSCList scs = DetailSCDao.quertSelectScs(clzno);
-        request.getSession().setAttribute("scs", scs);
 
         response.sendRedirect("../../jsp/stu/clz.jsp");
     }

@@ -19,6 +19,7 @@ import java.io.IOException;
 public class StudentUpdateInfoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        System.out.println("123" + request.getParameter("sno"));
         int sno = Integer.parseInt(request.getParameter("sno"));
         String name = request.getParameter("name");
         String sex = request.getParameter("sex");
@@ -26,12 +27,12 @@ public class StudentUpdateInfoServlet extends HttpServlet {
         String password = request.getParameter("password");
         String avatar = request.getParameter("avatar");
 
-        if(StudentDao.updateStudent(sno, name, sex, dept, password, avatar)){
+        if(StudentDao.updateStudent(sno, name, sex, dept, password, avatar)){ /* 更新学生信息 */
             Student student = StudentDao.queryStudentById(sno);
-            request.getSession().setAttribute("student", student);
-            request.getRequestDispatcher("StudentInfoServlet?page=1").forward(request, response);
+            request.getSession().setAttribute("student", student); /* 刷新 session 中的学生信息*/
+            request.getRequestDispatcher("../../jsp/stu/update_success.jsp").forward(request, response);
         }else{
-            request.getRequestDispatcher("../jsp/view/update_fail.jsp").forward(request, response);
+            request.getRequestDispatcher("../../jsp/stu/update_fail.jsp").forward(request, response);
         }
     }
 

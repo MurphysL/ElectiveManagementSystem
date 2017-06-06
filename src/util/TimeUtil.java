@@ -7,10 +7,11 @@ import java.util.Date;
 
 /**
  * 时间戳相关
+ * System.currentTimeMillis --- 毫秒(13)
  */
 public class TimeUtil {
 
-    public static final long A_WEEK = 604800L;
+    public static final long A_WEEK = 604800000L; // 1000 * 60 * 60 * 24 * 7 毫秒
 
     private static final String TERM_BEGIN_END_1 = "-01-01 01:00";
     private static final String TERM_END_END_1 = "-06-30 23:59";
@@ -40,8 +41,8 @@ public class TimeUtil {
 
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         try {
-            t[0] = format.parse(term_begin).getTime()/1000;
-            t[1] = format.parse(term_end).getTime()/1000;
+            t[0] = format.parse(term_begin).getTime();
+            t[1] = format.parse(term_end).getTime();
         } catch (ParseException e) {
             e.printStackTrace();
         }

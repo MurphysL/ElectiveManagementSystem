@@ -189,10 +189,13 @@ public class DetailClassDao {
      */
     public static int getClass4StudentCount(int sno){
         int num = 0;
-        String sql = "SELECT * FROM detail_clz WHERE clzno NOT IN (SELECT clzno FROM sc WHERE sno= ?)";
+        /* 未选过此类课程且尚未结课 */
+        String sql = "SELECT * FROM detail_clz WHERE cno NOT IN (SELECT cno FROM sc_view WHERE sno= ?) AND (start + detail_clz.duration*604800000) > ?";
+        long now = System.currentTimeMillis(); // 当前时间（秒）
         try {
             PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
             ps.setInt(1, sno);
+            ps.setLong(2, now);
             ResultSet rs2 = ps.executeQuery();
             if(rs2.next()){
                 num = rs2.getInt(1);
@@ -212,14 +215,17 @@ public class DetailClassDao {
     public static DetailClassList queryPagingClass4Student(int sno, int page){
         DetailClassList detailClassList = new DetailClassList();
         List<DetailClass> list = new ArrayList<>();
-        String sql = "SELECT * FROM detail_clz WHERE clzno NOT IN (SELECT clzno FROM sc WHERE sno= ?) LIMIT ?, ?";
+        long now = System.currentTimeMillis(); // 当前时间（毫秒）
+        /* 未选过此类课程且尚未结课 */
+        String sql = "SELECT * FROM detail_clz WHERE cno NOT IN (SELECT cno FROM sc_view WHERE sno= ?) AND (start + detail_clz.duration*604800000 > ?) LIMIT ?, ?";
         int start = (page-1)* Config.PAGE_BLOG_NUM;
         int end = Config.PAGE_BLOG_NUM;
         try {
             PreparedStatement ps = ConnUtil.getConn().prepareStatement(sql);
             ps.setInt(1, sno);
-            ps.setInt(2, start);
-            ps.setInt(3, end);
+            ps.setLong(2, now);
+            ps.setInt(3, start);
+            ps.setInt(4, end);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 DetailClass detailClass = new DetailClass();

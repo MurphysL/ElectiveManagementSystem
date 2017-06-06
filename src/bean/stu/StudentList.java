@@ -1,6 +1,5 @@
 package bean.stu;
 
-
 import java.util.List;
 
 

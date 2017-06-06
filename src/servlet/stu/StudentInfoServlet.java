@@ -21,28 +21,28 @@ public class StudentInfoServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         int page = Integer.parseInt(request.getParameter("page"));
         Student student = (Student) request.getSession().getAttribute("student");
-        System.out.println(student.toString());
-        DetailSCList sc = DetailSCDao.querySelectedPagingDetailSC(student.getSno(), page);
-        int num = DetailSCDao.getSelectedSCCount(student.getSno());
+        DetailSCList sc = DetailSCDao.querySelectedPagingDetailSC(student.getSno(), page); // 查询选课历史
+        int num = DetailSCDao.getSelectedSCCount(student.getSno()); // 选课历史条数
 
         int pages;//总页数
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder(); // 大致等同 String ..
         if(num % Config.PAGE_BLOG_NUM == 0){
             pages = num / Config.PAGE_BLOG_NUM;
         }else{
             pages = num / Config.PAGE_BLOG_NUM + 1;
         }
+        // 拼接分页按钮
         for(int i = 1 ;i <= pages ;i ++){
-            if(i == page){
-                sb.append("<a href=../../servlet/StudentInfoServlet?page=")
+            if(i == page){ // 当前页面
+                sb.append("<a href=../../servlet/stu/StudentInfoServlet?page=")
                         .append(i)
                         .append(" id=\"select\" style=\"")
                         .append(Config.CSS_SELECT)
                         .append("\">")
                         .append(i)
                         .append("</a>");
-            }else{
-                sb.append("<a href=../../servlet/StudentInfoServlet?page=")
+            }else{ // 其他页面
+                sb.append("<a href=../../servlet/stu/StudentInfoServlet?page=")
                         .append(i)
                         .append(" id=\"select\" style=\"")
                         .append(Config.CSS_UNSELECT)
@@ -51,7 +51,7 @@ public class StudentInfoServlet extends HttpServlet {
                         .append("</a>");
             }
         }
-        request.getSession().setAttribute("bar", sb.toString());
+        request.getSession().setAttribute("bar", sb.toString()); // 将信息保存至 session 中
         request.getSession().setAttribute("scs", sc);
         response.sendRedirect("/jsp/stu/student_info.jsp");
     }

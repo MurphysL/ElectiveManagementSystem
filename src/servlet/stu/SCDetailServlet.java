@@ -20,7 +20,7 @@ public class SCDetailServlet extends HttpServlet {
         int clzno = Integer.parseInt(request.getParameter("clzno"));
         int sno = Integer.parseInt(request.getParameter("sno"));
 
-        DetailSC sc = DetailSCDao.queryDetailSC(clzno, sno);
+        DetailSC sc = DetailSCDao.queryDetailSC(clzno, sno); /* 查询选课详细信息 */
         request.getSession().setAttribute("sc", sc);
 
         response.sendRedirect("../../jsp/stu/sc.jsp");
