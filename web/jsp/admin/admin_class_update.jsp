@@ -28,7 +28,7 @@
     <header>
         <nav>
             <div id="logo">
-                <a href="student_manage.jsp" >返回上一级</a>
+                <a href="../../servlet/admin/ClassManageServlet?page=1" >返回上一级</a>
             </div>
         </nav>
         <div id ="banner"></div>

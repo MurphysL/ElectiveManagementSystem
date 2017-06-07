@@ -22,7 +22,7 @@
     <header>
         <nav>
             <div id="logo">
-                <a href="teacher_manage.jsp" >返回上一级</a>
+                <a href="../../servlet/admin/TeacherManageServlet?page=1" >返回上一级</a>
             </div>
         </nav>
         <div id ="banner"></div>
@@ -31,7 +31,6 @@
 
 <div id="update">
     <div id="login_info">
-        <img class="cancel" src="../../img/cancel.png" onclick="update_back()">
         <form name="form" method="post" action="/servlet/admin/TeacherUpdateServlet">
             <input class="form_input" type="text" name="tno" value="<%=tno%>" readonly="readonly">
             <input class="form_input" type="text" name="tname" value="<%=tname%>" placeholder="姓  名">

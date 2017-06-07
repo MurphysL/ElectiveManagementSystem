@@ -8,10 +8,6 @@ function back(){
 	window.location.reload();
 }
 
-function update_back(){
-    window.location.reload();
-}
-
 window.onload=function() {
 	window.setInterval("realSysTime()" , 1000);
 }
