@@ -8,7 +8,7 @@ Elective Management System:
 
 | Login                    | Elective                     | Teacher                         |
 |:------------------------------:|:---------------------------------:|:--------------------------------:|
-|![](image/login.png) | ![](image/select.png) | ![](image/teacher.png)|
+|![](image/login.jpg) | ![](image/select.jpg) | ![](image/teacher.jpg)|
 
 ### DataBase
 ![](image/er.jpg)

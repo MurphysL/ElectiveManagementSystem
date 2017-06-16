@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdd457ed-6427-4e25-881c-f8bbda91b72c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/login.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/select.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/teacher.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/background1.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/database_workspace_cno_number.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/database_workspace_test.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/database_workspace_yq_course.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/database_workspace_yq_sc.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/database_workspace_yq_student.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/er.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/admin/ClassUpdateServlet.java" afterPath="$PROJECT_DIR$/src/servlet/admin/ClassUpdateServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/stu/StudentUpdateInfoServlet.java" afterPath="$PROJECT_DIR$/src/servlet/stu/StudentUpdateInfoServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/ems.css" afterPath="$PROJECT_DIR$/web/css/ems.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/yq.js" afterPath="$PROJECT_DIR$/web/js/yq.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/admin/course_manage.jsp" afterPath="$PROJECT_DIR$/web/jsp/admin/course_manage.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/stu/student_main.jsp" afterPath="$PROJECT_DIR$/web/jsp/stu/student_main.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,7 +25,21 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="310">
+                <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -198,6 +198,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ElectiveManagementSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ElectiveManagementSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -218,11 +232,11 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;dbSrc:///d469b750/2217d5e5-4063-4503-a6dc-a3a7a15ea176/schema/elective/view/sc_view.sql" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\ElectiveManagementSystem\web\jsp\admin" />
-      <recent name="E:\ElectiveManagementSystem\web\jsp\teacher" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ElectiveManagementSystem\image" />
       <recent name="E:\ElectiveManagementSystem\web\img" />
-      <recent name="E:\ElectiveManagementSystem\web\jsp\view" />
+      <recent name="E:\ElectiveManagementSystem" />
+      <recent name="E:\ElectiveManagementSystem\web\jsp" />
       <recent name="E:\ElectiveManagementSystem\web\jsp\stu" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -231,12 +245,12 @@
       <recent name="servlet.teacher" />
       <recent name="servlet" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\ElectiveManagementSystem\web\img" />
-      <recent name="E:\ElectiveManagementSystem" />
-      <recent name="E:\ElectiveManagementSystem\web\jsp" />
-      <recent name="E:\ElectiveManagementSystem\web\jsp\stu" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\ElectiveManagementSystem\web\jsp\admin" />
       <recent name="E:\ElectiveManagementSystem\web\jsp\teacher" />
+      <recent name="E:\ElectiveManagementSystem\web\img" />
+      <recent name="E:\ElectiveManagementSystem\web\jsp\view" />
+      <recent name="E:\ElectiveManagementSystem\web\jsp\stu" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -792,7 +806,7 @@
       <workItem from="1497591702068" duration="2150000" />
       <workItem from="1497596286520" duration="1985000" />
       <workItem from="1497612806983" duration="2364000" />
-      <workItem from="1497616586590" duration="66000" />
+      <workItem from="1497616586590" duration="377000" />
     </task>
     <task id="LOCAL-00001" summary=":sparkles: feat: student">
       <created>1496048568417</created>
@@ -871,11 +885,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496809041291</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary=":memo: update README">
+      <created>1497616759388</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1497616759388</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240724000" />
+    <option name="totallyTimeSpent" value="241035000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -977,7 +998,8 @@
     <MESSAGE value=":art: complete" />
     <MESSAGE value=":sparkles: LICENSE" />
     <MESSAGE value=":bug: admin update" />
-    <option name="LAST_COMMIT_MESSAGE" value=":bug: admin update" />
+    <MESSAGE value=":memo: update README" />
+    <option name="LAST_COMMIT_MESSAGE" value=":memo: update README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1375,8 +1397,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="282">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="310">
             <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
             <folding />
           </first_editor>
