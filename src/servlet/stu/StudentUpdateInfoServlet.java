@@ -19,7 +19,6 @@ import java.io.IOException;
 public class StudentUpdateInfoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        System.out.println("123" + request.getParameter("sno"));
         int sno = Integer.parseInt(request.getParameter("sno"));
         String name = request.getParameter("name");
         String sex = request.getParameter("sex");

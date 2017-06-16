@@ -56,7 +56,7 @@
                     </td>
                 </tr>
                 <%
-                    }else{
+                }else{
                 %>
                 <tr>
                     <td align="center" height="25px"></td>
@@ -67,7 +67,7 @@
                     <td align="center" height="25px"></td>
                 </tr>
                 <%
-                    }
+                        }
                     }
                 %>
             </table>

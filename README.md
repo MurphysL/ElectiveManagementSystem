@@ -1,18 +1,18 @@
-# 全校选修课管理系统
+# ElectiveManagementSystem
 
-- [X] 数据库建立
-### 学生模块：
-- [X] 学生信息查询
-- [X] 查询已选课程
-- [X] 修改已选课程
-- [X] 删除已选课程
-### 教师模块：
-- [X] 教师信息查询
-- [X] 授课信息
-### 管理员模块：
-- [X] 学生信息管理
-- [X] 课程信息管理
-- [X] 教师信息管理
+Elective Management System:
+* entering、modify、delete teacher information、course information and student information
+* convenient for students to elective course and drop course
+* grade management
+* query teacher information、student number、course name and so on
+
+| Login                    | Elective                     | Teacher                         |
+|:------------------------------:|:---------------------------------:|:--------------------------------:|
+|![](image/login.png) | ![](image/select.png) | ![](image/teacher.png)|
+
+### DataBase
+![](image/er.jpg)
+[database](db)
 
 ### LICENSE
-[LICENSE](LICENSE)
+[Apache License 2.0](LICENSE)

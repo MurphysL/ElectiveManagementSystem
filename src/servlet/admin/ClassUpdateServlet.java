@@ -28,7 +28,6 @@ public class ClassUpdateServlet extends HttpServlet {
         }else{
             request.getRequestDispatcher("../../jsp/admin/update_fail.jsp").forward(request, response);
         }
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

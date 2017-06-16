@@ -5,7 +5,7 @@ function login() {
 }
 
 function back(){
-	window.location.reload();
+	window.location.reload(); // 当前页面地址
 }
 
 window.onload=function() {
@@ -44,24 +44,25 @@ function realSysTime() {
 }
 
 function check() {
-	var login = document.getElementById('login');
-	var id = form.id.value
-	var password = form.password.value
-	
+	//var login = document.getElementById('login');
+	//var form = document.getElementsByName("form")
+	//var id = form.no.value
+	//var password = form.password.value
+    var id = form.no.value
+    var password = form.password.value
 	if (id=="") {
-    	alert("学号不能为空");
-    	form.id.focus();
-        form.id.select();
-    	return false;
-	}
-	if (password == "") {
+        alert("学号不能为空");
+        form.no.focus();
+        form.no.select();
+        return false;
+    }else if (password == "") {
 		alert("密码不能为空");
 		form.password.focus();
         form.password.select();
 		return false;
 	}
 
-	login.style.display = "none";
+	//login.style.display = "none";
 
     return true;
 }
