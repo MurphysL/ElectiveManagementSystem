@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdd457ed-6427-4e25-881c-f8bbda91b72c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/er.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
@@ -31,7 +30,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
               <first_editor relative-caret-position="310">
-                <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+                <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -806,7 +805,7 @@
       <workItem from="1497591702068" duration="2150000" />
       <workItem from="1497596286520" duration="1985000" />
       <workItem from="1497612806983" duration="2364000" />
-      <workItem from="1497616586590" duration="377000" />
+      <workItem from="1497616586590" duration="529000" />
     </task>
     <task id="LOCAL-00001" summary=":sparkles: feat: student">
       <created>1496048568417</created>
@@ -892,11 +891,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497616759388</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary=":memo: modify README pic">
+      <created>1497617015876</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1497617015876</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241035000" />
+    <option name="totallyTimeSpent" value="241187000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -999,7 +1005,8 @@
     <MESSAGE value=":sparkles: LICENSE" />
     <MESSAGE value=":bug: admin update" />
     <MESSAGE value=":memo: update README" />
-    <option name="LAST_COMMIT_MESSAGE" value=":memo: update README" />
+    <MESSAGE value=":memo: modify README pic" />
+    <option name="LAST_COMMIT_MESSAGE" value=":memo: modify README pic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1399,7 +1406,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="310">
-            <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />

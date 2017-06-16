@@ -10,9 +10,10 @@ Elective Management System:
 |:------------------------------:|:---------------------------------:|:--------------------------------:|
 |![](image/login.jpg) | ![](image/select.jpg) | ![](image/teacher.jpg)|
 
-### DataBase
+## DataBase
 ![](image/er.jpg)
+
 [database](db)
 
-### LICENSE
+## LICENSE
 [Apache License 2.0](LICENSE)
